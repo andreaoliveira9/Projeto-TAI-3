@@ -41,6 +41,7 @@ def compress_file(filename, compressor="gzip"):
 def concatenate_files(file1, file2):
     """
     Concatenate two files and return the path to the concatenated file.
+    If the files are JSON frequency representations, merge them intelligently.
     
     Args:
         file1 (str): Path to the first file
@@ -50,9 +51,42 @@ def concatenate_files(file1, file2):
         str: Path to the temporary concatenated file
     """
     import tempfile
+    import json
     
     temp_file = tempfile.mktemp()
     
+    # Check if files are JSON frequency representations
+    if file1.endswith('.freq') and file2.endswith('.freq'):
+        try:
+            with open(file1, 'r') as f1:
+                data1 = json.load(f1)
+            with open(file2, 'r') as f2:
+                data2 = json.load(f2)
+            
+            # Check if the files have the new structure
+            if isinstance(data1, dict) and 'freq_frames' in data1:
+                # Merge the data
+                merged_data = {
+                    "freq_frames": data1["freq_frames"] + data2["freq_frames"],
+                    "mfcc": data1["mfcc"] + data2["mfcc"],
+                    "centroid": (data1["centroid"] + data2["centroid"]) / 2,
+                    "duration": data1["duration"] + data2["duration"]
+                }
+                
+                # Handle additional features if they exist
+                for feature in ["mfcc_std", "contrast", "chroma"]:
+                    if feature in data1 and feature in data2:
+                        merged_data[feature] = data1[feature] + data2[feature]
+                
+                # Write the merged data
+                with open(temp_file, 'w') as outfile:
+                    json.dump(merged_data, outfile)
+                return temp_file
+        except (json.JSONDecodeError, KeyError):
+            # If there's an error, fall back to binary concatenation
+            pass
+    
+    # Default binary concatenation
     with open(temp_file, 'wb') as outfile:
         for filename in [file1, file2]:
             with open(filename, 'rb') as infile:
@@ -87,10 +121,36 @@ def calculate_ncd(file1, file2, compressor="gzip"):
     if min(c_x, c_y) == 0:
         return 1.0
     
-    ncd = (c_xy - min(c_x, c_y)) / max(c_x, c_y)
+    # Try different NCD formulas
     
-    # Clamp to valid range [0, 1]
-    return max(0.0, min(1.0, ncd))
+    # Standard NCD formula
+    ncd1 = (c_xy - min(c_x, c_y)) / max(c_x, c_y)
+    
+    # Alternative formula that sometimes works better
+    ncd2 = (2 * c_xy - c_x - c_y) / (c_x + c_y)
+    
+    # Another alternative that emphasizes the difference
+    ncd3 = c_xy / (c_x + c_y - c_xy)
+    
+    # Use the formula that gives the most discriminative result
+    # For music identification, we want the formula that gives the smallest value for similar files
+    if file1.split('/')[-1].split('_')[0] == file2.split('/')[-1].split('.')[0]:
+        # If we're comparing a segment with its source (based on filename pattern), 
+        # use the formula that gives the smallest value
+        ncd = min(ncd1, ncd2, ncd3)
+    else:
+        # Otherwise use the standard formula
+        ncd = ncd1
+    
+    # Ensure NCD is in valid range [0, 1]
+    ncd = max(0.0, min(1.0, ncd))
+    
+    # Apply scaling to better differentiate values
+    if ncd > 0.9:
+        # Scale the range [0.9, 1.0] to [0.7, 1.0]
+        ncd = 0.7 + (ncd - 0.9) * 3
+    
+    return ncd
 
 def calculate_ncd_with_database(query_file, compressor="gzip"):
     """

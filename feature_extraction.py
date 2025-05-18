@@ -64,13 +64,31 @@ def convert_to_frequencies_internal(audio_file, output_file=None):
         # Load the audio file
         y, sr = librosa.load(audio_file, sr=None, mono=True)
         
-        # Parameters for frequency extraction
-        frame_length = 2048
-        hop_length = 512
-        num_freqs = 5  # Number of top frequencies to keep
+        # Parameters for frequency extraction - increased for better resolution
+        frame_length = 8192  # Increased for better frequency resolution
+        hop_length = 256     # Small hop for more overlap
+        num_freqs = 20       # More frequencies to capture more details
         
         # Get spectrogram
         D = np.abs(librosa.stft(y, n_fft=frame_length, hop_length=hop_length))
+        
+        # Extract additional features
+        # Mel-frequency cepstral coefficients (MFCCs)
+        mfccs = librosa.feature.mfcc(y=y, sr=sr, n_mfcc=13)
+        mfcc_mean = np.mean(mfccs, axis=1).tolist()
+        mfcc_std = np.std(mfccs, axis=1).tolist()  # Add standard deviation for robustness
+        
+        # Spectral centroid
+        centroid = librosa.feature.spectral_centroid(y=y, sr=sr)[0]
+        centroid_mean = float(np.mean(centroid))
+        
+        # Spectral contrast
+        contrast = librosa.feature.spectral_contrast(y=y, sr=sr)
+        contrast_mean = np.mean(contrast, axis=1).tolist()
+        
+        # Chroma features
+        chroma = librosa.feature.chroma_stft(y=y, sr=sr)
+        chroma_mean = np.mean(chroma, axis=1).tolist()
         
         # Find top frequencies for each frame
         freq_data = []
@@ -91,9 +109,20 @@ def convert_to_frequencies_internal(audio_file, output_file=None):
             
             freq_data.append(frame_freqs)
         
+        # Create a more comprehensive feature representation
+        feature_data = {
+            "freq_frames": freq_data,
+            "mfcc": mfcc_mean,
+            "mfcc_std": mfcc_std,
+            "centroid": centroid_mean,
+            "contrast": contrast_mean,
+            "chroma": chroma_mean,
+            "duration": len(y) / sr
+        }
+        
         # Save the frequency data
         with open(output_file, 'w') as f:
-            json.dump(freq_data, f)
+            json.dump(feature_data, f)
             
         return output_file
         
