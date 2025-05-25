@@ -1,0 +1,5885 @@
+{
+  "tests": [
+    {
+      "file": "Mozart - Requiem - Sanctus - Herreweghe_segment_2_noise_0.1.freq",
+      "actual_name": "Mozart - Requiem - Sanctus - Herreweghe",
+      "compressor": "gzip",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9498164014687882
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Mozart - Requiem - Sanctus - Herreweghe_segment_2_noise_0.1.freq",
+      "actual_name": "Mozart - Requiem - Sanctus - Herreweghe",
+      "compressor": "bzip2",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9325014180374361
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Mozart - Requiem - Sanctus - Herreweghe_segment_2_noise_0.1.freq",
+      "actual_name": "Mozart - Requiem - Sanctus - Herreweghe",
+      "compressor": "xz",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.8444652031760858
+        },
+        {
+          "name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+          "distance": 0.971312982714233
+        },
+        {
+          "name": "Rainbow - I Surrender",
+          "distance": 0.9724770642201835
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Mozart - Requiem - Sanctus - Herreweghe_segment_2_noise_0.1.freq",
+      "actual_name": "Mozart - Requiem - Sanctus - Herreweghe",
+      "compressor": "zstd",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9954159106102567
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Vangelis - Spiral (Audio)_segment_1.freq",
+      "actual_name": "Vangelis - Spiral (Audio)",
+      "compressor": "gzip",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+          "distance": 0.99924415830863
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": false,
+      "error": null
+    },
+    {
+      "file": "Vangelis - Spiral (Audio)_segment_1.freq",
+      "actual_name": "Vangelis - Spiral (Audio)",
+      "compressor": "bzip2",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9769483300028545
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Vangelis - Spiral (Audio)_segment_1.freq",
+      "actual_name": "Vangelis - Spiral (Audio)",
+      "compressor": "xz",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.953287818900467
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9565623540401679
+        },
+        {
+          "name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+          "distance": 0.9724163295329165
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Vangelis - Spiral (Audio)_segment_1.freq",
+      "actual_name": "Vangelis - Spiral (Audio)",
+      "compressor": "zstd",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9813548788067122
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Vangelis - Spiral (Audio)_segment_0_noise_0.2.freq",
+      "actual_name": "Vangelis - Spiral (Audio)",
+      "compressor": "gzip",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.99594411897251
+        },
+        {
+          "name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+          "distance": 0.9986008887840597
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Vangelis - Spiral (Audio)_segment_0_noise_0.2.freq",
+      "actual_name": "Vangelis - Spiral (Audio)",
+      "compressor": "bzip2",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9813017413645445
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Vangelis - Spiral (Audio)_segment_0_noise_0.2.freq",
+      "actual_name": "Vangelis - Spiral (Audio)",
+      "compressor": "xz",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9593647828117701
+        },
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9655048508803448
+        },
+        {
+          "name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+          "distance": 0.9736394557823128
+        }
+      ],
+      "correct": false,
+      "error": null
+    },
+    {
+      "file": "Vangelis - Spiral (Audio)_segment_0_noise_0.2.freq",
+      "actual_name": "Vangelis - Spiral (Audio)",
+      "compressor": "zstd",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9920399674905579
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Ultravox - All Stood Still_segment_1_noise_0.1.freq",
+      "actual_name": "Ultravox - All Stood Still",
+      "compressor": "gzip",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.977515134044393
+        },
+        {
+          "name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+          "distance": 0.9945183111733145
+        },
+        {
+          "name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+          "distance": 0.9983435809742315
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Ultravox - All Stood Still_segment_1_noise_0.1.freq",
+      "actual_name": "Ultravox - All Stood Still",
+      "compressor": "bzip2",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.962747524752475
+        },
+        {
+          "name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+          "distance": 0.9947297600358824
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Ultravox - All Stood Still_segment_1_noise_0.1.freq",
+      "actual_name": "Ultravox - All Stood Still",
+      "compressor": "xz",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9439252336448597
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9551611396543671
+        },
+        {
+          "name": "Rainbow - I Surrender",
+          "distance": 0.9698805608447291
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Ultravox - All Stood Still_segment_1_noise_0.1.freq",
+      "actual_name": "Ultravox - All Stood Still",
+      "compressor": "zstd",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9804716285924834
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)_segment_1.freq",
+      "actual_name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+      "compressor": "gzip",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+          "distance": 0.9974108401636049
+        },
+        {
+          "name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+          "distance": 0.9980172614882202
+        },
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9987982574733364
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)_segment_1.freq",
+      "actual_name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+      "compressor": "bzip2",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+          "distance": 0.9975617380431383
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)_segment_1.freq",
+      "actual_name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+      "compressor": "xz",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+          "distance": 0.971938775510204
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9733769266697804
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9753957657829486
+        }
+      ],
+      "correct": false,
+      "error": null
+    },
+    {
+      "file": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)_segment_1.freq",
+      "actual_name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+      "compressor": "zstd",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+          "distance": 0.9934127344149638
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)_segment_2_noise_0.2.freq",
+      "actual_name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+      "compressor": "gzip",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+          "distance": 0.9976520662353187
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)_segment_2_noise_0.2.freq",
+      "actual_name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+      "compressor": "bzip2",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+          "distance": 0.9995238896770625
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)_segment_2_noise_0.2.freq",
+      "actual_name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+      "compressor": "xz",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9523587108827649
+        },
+        {
+          "name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+          "distance": 0.9744897959183674
+        },
+        {
+          "name": "Rainbow - I Surrender",
+          "distance": 0.9745542669205469
+        }
+      ],
+      "correct": false,
+      "error": null
+    },
+    {
+      "file": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)_segment_2_noise_0.2.freq",
+      "actual_name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+      "compressor": "zstd",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+          "distance": 0.9975533013541292
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Ultravox - All Stood Still_segment_2.freq",
+      "actual_name": "Ultravox - All Stood Still",
+      "compressor": "gzip",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9712144298480418
+        },
+        {
+          "name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+          "distance": 0.9959178912992768
+        },
+        {
+          "name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+          "distance": 0.9987134609508593
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Ultravox - All Stood Still_segment_2.freq",
+      "actual_name": "Ultravox - All Stood Still",
+      "compressor": "bzip2",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9660891089108911
+        },
+        {
+          "name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+          "distance": 0.9929356357927787
+        },
+        {
+          "name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+          "distance": 0.9996248827758674
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Ultravox - All Stood Still_segment_2.freq",
+      "actual_name": "Ultravox - All Stood Still",
+      "compressor": "xz",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9387755102040815
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9691732835123774
+        },
+        {
+          "name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+          "distance": 0.9751746965796246
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Ultravox - All Stood Still_segment_2.freq",
+      "actual_name": "Ultravox - All Stood Still",
+      "compressor": "zstd",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9727339719970524
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Vangelis - Spiral (Audio)_segment_2_noise_0.1.freq",
+      "actual_name": "Vangelis - Spiral (Audio)",
+      "compressor": "gzip",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+          "distance": 0.996684065090574
+        },
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9966952080516748
+        },
+        {
+          "name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+          "distance": 0.9979006298110564
+        }
+      ],
+      "correct": false,
+      "error": null
+    },
+    {
+      "file": "Vangelis - Spiral (Audio)_segment_2_noise_0.1.freq",
+      "actual_name": "Vangelis - Spiral (Audio)",
+      "compressor": "bzip2",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9798743933771054
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Vangelis - Spiral (Audio)_segment_2_noise_0.1.freq",
+      "actual_name": "Vangelis - Spiral (Audio)",
+      "compressor": "xz",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9607659971975712
+        },
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9615522817103844
+        },
+        {
+          "name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+          "distance": 0.9753401360544216
+        }
+      ],
+      "correct": false,
+      "error": null
+    },
+    {
+      "file": "Vangelis - Spiral (Audio)_segment_2_noise_0.1.freq",
+      "actual_name": "Vangelis - Spiral (Audio)",
+      "compressor": "zstd",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9921116794951474
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Ultravox - All Stood Still_segment_0_noise_0.1.freq",
+      "actual_name": "Ultravox - All Stood Still",
+      "compressor": "gzip",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9681258493596342
+        },
+        {
+          "name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+          "distance": 0.9954513645906226
+        },
+        {
+          "name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+          "distance": 0.9986973792127452
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Ultravox - All Stood Still_segment_0_noise_0.1.freq",
+      "actual_name": "Ultravox - All Stood Still",
+      "compressor": "bzip2",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9603960396039601
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Ultravox - All Stood Still_segment_0_noise_0.1.freq",
+      "actual_name": "Ultravox - All Stood Still",
+      "compressor": "xz",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.917604424947549
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9649696403549741
+        },
+        {
+          "name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+          "distance": 0.9707613093048914
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Ultravox - All Stood Still_segment_0_noise_0.1.freq",
+      "actual_name": "Ultravox - All Stood Still",
+      "compressor": "zstd",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9627855563743551
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)_segment_0_noise_0.1.freq",
+      "actual_name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+      "compressor": "gzip",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+          "distance": 0.9922628185446728
+        },
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.997371188222923
+        },
+        {
+          "name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+          "distance": 0.9976681479734328
+        }
+      ],
+      "correct": false,
+      "error": null
+    },
+    {
+      "file": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)_segment_0_noise_0.1.freq",
+      "actual_name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+      "compressor": "bzip2",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+          "distance": 0.9986293793733618
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)_segment_0_noise_0.1.freq",
+      "actual_name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+      "compressor": "xz",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9607659971975712
+        },
+        {
+          "name": "Rainbow - I Surrender",
+          "distance": 0.9729963648952743
+        },
+        {
+          "name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+          "distance": 0.9736394557823128
+        }
+      ],
+      "correct": false,
+      "error": null
+    },
+    {
+      "file": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)_segment_0_noise_0.1.freq",
+      "actual_name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+      "compressor": "zstd",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+          "distance": 0.9973071837388643
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]_segment_2_noise_0.1.freq",
+      "actual_name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+      "compressor": "gzip",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+          "distance": 0.9436291065397605
+        },
+        {
+          "name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+          "distance": 0.9978772105689182
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]_segment_2_noise_0.1.freq",
+      "actual_name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+      "compressor": "bzip2",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+          "distance": 0.9298157453936349
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]_segment_2_noise_0.1.freq",
+      "actual_name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+      "compressor": "xz",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+          "distance": 0.8894557823129252
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.948155067725362
+        },
+        {
+          "name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+          "distance": 0.9702096358955496
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]_segment_2_noise_0.1.freq",
+      "actual_name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+      "compressor": "zstd",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+          "distance": 0.9317188025563403
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Mozart - Requiem - Sanctus - Herreweghe_segment_1_noise_0.2.freq",
+      "actual_name": "Mozart - Requiem - Sanctus - Herreweghe",
+      "compressor": "gzip",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9608323133414931
+        },
+        {
+          "name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+          "distance": 0.9999839182618857
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Mozart - Requiem - Sanctus - Herreweghe_segment_1_noise_0.2.freq",
+      "actual_name": "Mozart - Requiem - Sanctus - Herreweghe",
+      "compressor": "bzip2",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9452637549631308
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Mozart - Requiem - Sanctus - Herreweghe_segment_1_noise_0.2.freq",
+      "actual_name": "Mozart - Requiem - Sanctus - Herreweghe",
+      "compressor": "xz",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.8808967772069126
+        },
+        {
+          "name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+          "distance": 0.9702380952380952
+        },
+        {
+          "name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+          "distance": 0.9718646561235748
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Mozart - Requiem - Sanctus - Herreweghe_segment_1_noise_0.2.freq",
+      "actual_name": "Mozart - Requiem - Sanctus - Herreweghe",
+      "compressor": "zstd",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Mozart - Requiem - Sanctus - Herreweghe_segment_0.freq",
+      "actual_name": "Mozart - Requiem - Sanctus - Herreweghe",
+      "compressor": "gzip",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9675642594859238
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Mozart - Requiem - Sanctus - Herreweghe_segment_0.freq",
+      "actual_name": "Mozart - Requiem - Sanctus - Herreweghe",
+      "compressor": "bzip2",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9427112875779918
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Mozart - Requiem - Sanctus - Herreweghe_segment_0.freq",
+      "actual_name": "Mozart - Requiem - Sanctus - Herreweghe",
+      "compressor": "xz",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.8822979915927137
+        },
+        {
+          "name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+          "distance": 0.9724163295329165
+        },
+        {
+          "name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+          "distance": 0.9744897959183674
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Mozart - Requiem - Sanctus - Herreweghe_segment_0.freq",
+      "actual_name": "Mozart - Requiem - Sanctus - Herreweghe",
+      "compressor": "zstd",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Mozart - Requiem - Sanctus - Herreweghe_segment_2.freq",
+      "actual_name": "Mozart - Requiem - Sanctus - Herreweghe",
+      "compressor": "gzip",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9516523867809058
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Mozart - Requiem - Sanctus - Herreweghe_segment_2.freq",
+      "actual_name": "Mozart - Requiem - Sanctus - Herreweghe",
+      "compressor": "bzip2",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9268292682926828
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Mozart - Requiem - Sanctus - Herreweghe_segment_2.freq",
+      "actual_name": "Mozart - Requiem - Sanctus - Herreweghe",
+      "compressor": "xz",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.8416627744044839
+        },
+        {
+          "name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+          "distance": 0.9718646561235748
+        },
+        {
+          "name": "Rainbow - I Surrender",
+          "distance": 0.9719577635450924
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Mozart - Requiem - Sanctus - Herreweghe_segment_2.freq",
+      "actual_name": "Mozart - Requiem - Sanctus - Herreweghe",
+      "compressor": "zstd",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.989685798873078
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Rainbow - I Surrender_segment_2_noise_0.2.freq",
+      "actual_name": "Rainbow - I Surrender",
+      "compressor": "gzip",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Rainbow - I Surrender",
+          "distance": 0.9822318851445065
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9997529135609274
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Rainbow - I Surrender_segment_2_noise_0.2.freq",
+      "actual_name": "Rainbow - I Surrender",
+      "compressor": "bzip2",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Rainbow - I Surrender",
+          "distance": 0.9647227428067466
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.998267326732673
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Rainbow - I Surrender_segment_2_noise_0.2.freq",
+      "actual_name": "Rainbow - I Surrender",
+      "compressor": "xz",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Rainbow - I Surrender",
+          "distance": 0.9449541284403669
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.957963568425969
+        },
+        {
+          "name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+          "distance": 0.9724163295329165
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Rainbow - I Surrender_segment_2_noise_0.2.freq",
+      "actual_name": "Rainbow - I Surrender",
+      "compressor": "zstd",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Rainbow - I Surrender",
+          "distance": 0.9872416701813581
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)_segment_2.freq",
+      "actual_name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+      "compressor": "gzip",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+          "distance": 0.9978128836164611
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)_segment_2.freq",
+      "actual_name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+      "compressor": "bzip2",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+          "distance": 0.9993074758939089
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)_segment_2.freq",
+      "actual_name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+      "compressor": "xz",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.957963568425969
+        },
+        {
+          "name": "Rainbow - I Surrender",
+          "distance": 0.9729963648952743
+        },
+        {
+          "name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+          "distance": 0.9736394557823128
+        }
+      ],
+      "correct": false,
+      "error": null
+    },
+    {
+      "file": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)_segment_2.freq",
+      "actual_name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+      "compressor": "zstd",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+          "distance": 0.9976546439015914
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Vangelis - Spiral (Audio)_segment_2.freq",
+      "actual_name": "Vangelis - Spiral (Audio)",
+      "compressor": "gzip",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9968454258675078
+        },
+        {
+          "name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+          "distance": 0.9977893767270495
+        },
+        {
+          "name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+          "distance": 0.9984837881968741
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Vangelis - Spiral (Audio)_segment_2.freq",
+      "actual_name": "Vangelis - Spiral (Audio)",
+      "compressor": "bzip2",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9795175563802454
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Vangelis - Spiral (Audio)_segment_2.freq",
+      "actual_name": "Vangelis - Spiral (Audio)",
+      "compressor": "xz",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.953759925268566
+        },
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9644268774703555
+        },
+        {
+          "name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+          "distance": 0.9729680029422582
+        }
+      ],
+      "correct": false,
+      "error": null
+    },
+    {
+      "file": "Vangelis - Spiral (Audio)_segment_2.freq",
+      "actual_name": "Vangelis - Spiral (Audio)",
+      "compressor": "zstd",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9946933116603717
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Rainbow - I Surrender_segment_2.freq",
+      "actual_name": "Rainbow - I Surrender",
+      "compressor": "gzip",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Rainbow - I Surrender",
+          "distance": 0.9833564493758667
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Rainbow - I Surrender_segment_2.freq",
+      "actual_name": "Rainbow - I Surrender",
+      "compressor": "bzip2",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Rainbow - I Surrender",
+          "distance": 0.9649432256642044
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9990099009900988
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Rainbow - I Surrender_segment_2.freq",
+      "actual_name": "Rainbow - I Surrender",
+      "compressor": "xz",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Rainbow - I Surrender",
+          "distance": 0.949108533841094
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9565623540401679
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.97139042532901
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Rainbow - I Surrender_segment_2.freq",
+      "actual_name": "Rainbow - I Surrender",
+      "compressor": "zstd",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": false,
+      "error": null
+    },
+    {
+      "file": "Metallica\uff1a The Memory Remains (Official Music Video)_segment_2_noise_0.1.freq",
+      "actual_name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+      "compressor": "gzip",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": false,
+      "error": null
+    },
+    {
+      "file": "Metallica\uff1a The Memory Remains (Official Music Video)_segment_2_noise_0.1.freq",
+      "actual_name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+      "compressor": "bzip2",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": false,
+      "error": null
+    },
+    {
+      "file": "Metallica\uff1a The Memory Remains (Official Music Video)_segment_2_noise_0.1.freq",
+      "actual_name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+      "compressor": "xz",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.948155067725362
+        },
+        {
+          "name": "Rainbow - I Surrender",
+          "distance": 0.9724770642201835
+        },
+        {
+          "name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+          "distance": 0.9740713497609416
+        }
+      ],
+      "correct": false,
+      "error": null
+    },
+    {
+      "file": "Metallica\uff1a The Memory Remains (Official Music Video)_segment_2_noise_0.1.freq",
+      "actual_name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+      "compressor": "zstd",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": false,
+      "error": null
+    },
+    {
+      "file": "Vangelis - Spiral (Audio)_segment_0.freq",
+      "actual_name": "Vangelis - Spiral (Audio)",
+      "compressor": "gzip",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9970707525912573
+        },
+        {
+          "name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+          "distance": 0.9987938696414306
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Vangelis - Spiral (Audio)_segment_0.freq",
+      "actual_name": "Vangelis - Spiral (Audio)",
+      "compressor": "bzip2",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9786611475877818
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Vangelis - Spiral (Audio)_segment_0.freq",
+      "actual_name": "Vangelis - Spiral (Audio)",
+      "compressor": "xz",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9649696403549741
+        },
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.966582824290334
+        },
+        {
+          "name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+          "distance": 0.9735196763515999
+        }
+      ],
+      "correct": false,
+      "error": null
+    },
+    {
+      "file": "Vangelis - Spiral (Audio)_segment_0.freq",
+      "actual_name": "Vangelis - Spiral (Audio)",
+      "compressor": "zstd",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9918248314767892
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]_segment_1.freq",
+      "actual_name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+      "compressor": "gzip",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+          "distance": 0.8808105618667486
+        },
+        {
+          "name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+          "distance": 0.9979576192594894
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]_segment_1.freq",
+      "actual_name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+      "compressor": "bzip2",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+          "distance": 0.908542713567839
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]_segment_1.freq",
+      "actual_name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+      "compressor": "xz",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+          "distance": 0.8469387755102041
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9565623540401679
+        },
+        {
+          "name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+          "distance": 0.9707613093048914
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]_segment_1.freq",
+      "actual_name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+      "compressor": "zstd",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+          "distance": 0.8807601749075006
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Vangelis - Spiral (Audio)_segment_1_noise_0.2.freq",
+      "actual_name": "Vangelis - Spiral (Audio)",
+      "compressor": "gzip",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+          "distance": 0.9991155044037159
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": false,
+      "error": null
+    },
+    {
+      "file": "Vangelis - Spiral (Audio)_segment_1_noise_0.2.freq",
+      "actual_name": "Vangelis - Spiral (Audio)",
+      "compressor": "bzip2",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9757350842135313
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Vangelis - Spiral (Audio)_segment_1_noise_0.2.freq",
+      "actual_name": "Vangelis - Spiral (Audio)",
+      "compressor": "xz",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9493352497305066
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9607659971975712
+        },
+        {
+          "name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+          "distance": 0.971938775510204
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Vangelis - Spiral (Audio)_segment_1_noise_0.2.freq",
+      "actual_name": "Vangelis - Spiral (Audio)",
+      "compressor": "zstd",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9805660467562268
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Rainbow - I Surrender_segment_0_noise_0.2.freq",
+      "actual_name": "Rainbow - I Surrender",
+      "compressor": "gzip",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Rainbow - I Surrender",
+          "distance": 0.9527683022828654
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9986410245851007
+        },
+        {
+          "name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+          "distance": 0.9993567304754296
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Rainbow - I Surrender_segment_0_noise_0.2.freq",
+      "actual_name": "Rainbow - I Surrender",
+      "compressor": "bzip2",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Rainbow - I Surrender",
+          "distance": 0.9545805313636865
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9933168316831682
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Rainbow - I Surrender_segment_0_noise_0.2.freq",
+      "actual_name": "Rainbow - I Surrender",
+      "compressor": "xz",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Rainbow - I Surrender",
+          "distance": 0.9002942703825514
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9691732835123774
+        },
+        {
+          "name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+          "distance": 0.9727891156462583
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Rainbow - I Surrender_segment_0_noise_0.2.freq",
+      "actual_name": "Rainbow - I Surrender",
+      "compressor": "zstd",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Rainbow - I Surrender",
+          "distance": 0.9402150991142977
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]_segment_2_noise_0.2.freq",
+      "actual_name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+      "compressor": "gzip",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+          "distance": 0.9447344181762357
+        },
+        {
+          "name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+          "distance": 0.9979576192594894
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]_segment_2_noise_0.2.freq",
+      "actual_name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+      "compressor": "bzip2",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+          "distance": 0.9273031825795645
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]_segment_2_noise_0.2.freq",
+      "actual_name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+      "compressor": "xz",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+          "distance": 0.8988095238095237
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9523587108827649
+        },
+        {
+          "name": "Rainbow - I Surrender",
+          "distance": 0.9740349662454562
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]_segment_2_noise_0.2.freq",
+      "actual_name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+      "compressor": "zstd",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+          "distance": 0.939623276152035
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]_segment_0_noise_0.2.freq",
+      "actual_name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+      "compressor": "gzip",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+          "distance": 0.9438133251458395
+        },
+        {
+          "name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+          "distance": 0.9981988453312032
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]_segment_0_noise_0.2.freq",
+      "actual_name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+      "compressor": "bzip2",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+          "distance": 0.9304857621440537
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]_segment_0_noise_0.2.freq",
+      "actual_name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+      "compressor": "xz",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+          "distance": 0.893707482993197
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9649696403549741
+        },
+        {
+          "name": "Rainbow - I Surrender",
+          "distance": 0.978708672321274
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]_segment_0_noise_0.2.freq",
+      "actual_name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+      "compressor": "zstd",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+          "distance": 0.946855028590649
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Ultravox - All Stood Still_segment_0_noise_0.2.freq",
+      "actual_name": "Ultravox - All Stood Still",
+      "compressor": "gzip",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9666433307251985
+        },
+        {
+          "name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+          "distance": 0.9947515745276417
+        },
+        {
+          "name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+          "distance": 0.9988421148557735
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Ultravox - All Stood Still_segment_0_noise_0.2.freq",
+      "actual_name": "Ultravox - All Stood Still",
+      "compressor": "bzip2",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9581683168316829
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Ultravox - All Stood Still_segment_0_noise_0.2.freq",
+      "actual_name": "Ultravox - All Stood Still",
+      "compressor": "xz",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9198931909212282
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9621672115833723
+        },
+        {
+          "name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+          "distance": 0.9702096358955496
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Ultravox - All Stood Still_segment_0_noise_0.2.freq",
+      "actual_name": "Ultravox - All Stood Still",
+      "compressor": "zstd",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9603291574551706
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Rainbow - I Surrender_segment_2_noise_0.1.freq",
+      "actual_name": "Rainbow - I Surrender",
+      "compressor": "gzip",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Rainbow - I Surrender",
+          "distance": 0.9825692544139144
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9988881110241732
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Rainbow - I Surrender_segment_2_noise_0.1.freq",
+      "actual_name": "Rainbow - I Surrender",
+      "compressor": "bzip2",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Rainbow - I Surrender",
+          "distance": 0.960202844228861
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9961633663366335
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Rainbow - I Surrender_segment_2_noise_0.1.freq",
+      "actual_name": "Rainbow - I Surrender",
+      "compressor": "xz",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Rainbow - I Surrender",
+          "distance": 0.949108533841094
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9565623540401679
+        },
+        {
+          "name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+          "distance": 0.9702096358955496
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Rainbow - I Surrender_segment_2_noise_0.1.freq",
+      "actual_name": "Rainbow - I Surrender",
+      "compressor": "zstd",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": false,
+      "error": null
+    },
+    {
+      "file": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)_segment_2_noise_0.1.freq",
+      "actual_name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+      "compressor": "gzip",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+          "distance": 0.9976520662353187
+        },
+        {
+          "name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+          "distance": 0.999263125575683
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)_segment_2_noise_0.1.freq",
+      "actual_name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+      "compressor": "bzip2",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+          "distance": 0.9995094620915189
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)_segment_2_noise_0.1.freq",
+      "actual_name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+      "compressor": "xz",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.953759925268566
+        },
+        {
+          "name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+          "distance": 0.971938775510204
+        },
+        {
+          "name": "Rainbow - I Surrender",
+          "distance": 0.9750735675956377
+        }
+      ],
+      "correct": false,
+      "error": null
+    },
+    {
+      "file": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)_segment_2_noise_0.1.freq",
+      "actual_name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+      "compressor": "zstd",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+          "distance": 0.9978573289965158
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)_segment_1_noise_0.1.freq",
+      "actual_name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+      "compressor": "gzip",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+          "distance": 0.9965010496850945
+        },
+        {
+          "name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+          "distance": 0.9972821862586908
+        },
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9979720594862551
+        }
+      ],
+      "correct": false,
+      "error": null
+    },
+    {
+      "file": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)_segment_1_noise_0.1.freq",
+      "actual_name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+      "compressor": "bzip2",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+          "distance": 0.9974318897732463
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)_segment_1_noise_0.1.freq",
+      "actual_name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+      "compressor": "xz",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+          "distance": 0.9693877551020407
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9719757122839793
+        },
+        {
+          "name": "Rainbow - I Surrender",
+          "distance": 0.9755928682707288
+        }
+      ],
+      "correct": false,
+      "error": null
+    },
+    {
+      "file": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)_segment_1_noise_0.1.freq",
+      "actual_name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+      "compressor": "zstd",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+          "distance": 0.9936878070437896
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Rainbow - I Surrender_segment_0.freq",
+      "actual_name": "Rainbow - I Surrender",
+      "compressor": "gzip",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Rainbow - I Surrender",
+          "distance": 0.9555797128612662
+        },
+        {
+          "name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+          "distance": 0.999630120023372
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Rainbow - I Surrender_segment_0.freq",
+      "actual_name": "Rainbow - I Surrender",
+      "compressor": "bzip2",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Rainbow - I Surrender",
+          "distance": 0.9568956013669935
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Rainbow - I Surrender_segment_0.freq",
+      "actual_name": "Rainbow - I Surrender",
+      "compressor": "xz",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Rainbow - I Surrender",
+          "distance": 0.9013328717327332
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9607659971975712
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9725348083158496
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Rainbow - I Surrender_segment_0.freq",
+      "actual_name": "Rainbow - I Surrender",
+      "compressor": "zstd",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Rainbow - I Surrender",
+          "distance": 0.9427456769295656
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]_segment_0.freq",
+      "actual_name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+      "compressor": "gzip",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+          "distance": 0.9438133251458395
+        },
+        {
+          "name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+          "distance": 0.9983918261885744
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]_segment_0.freq",
+      "actual_name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+      "compressor": "bzip2",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+          "distance": 0.9257956448911222
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]_segment_0.freq",
+      "actual_name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+      "compressor": "xz",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+          "distance": 0.8945578231292516
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9649696403549741
+        },
+        {
+          "name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+          "distance": 0.9779330636263331
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]_segment_0.freq",
+      "actual_name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+      "compressor": "zstd",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+          "distance": 0.9426505213588966
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Ultravox - All Stood Still_segment_0.freq",
+      "actual_name": "Ultravox - All Stood Still",
+      "compressor": "gzip",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9673845900424165
+        },
+        {
+          "name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+          "distance": 0.9961511546536037
+        },
+        {
+          "name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+          "distance": 0.9988903600701163
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Ultravox - All Stood Still_segment_0.freq",
+      "actual_name": "Ultravox - All Stood Still",
+      "compressor": "bzip2",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9587871287128713
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Ultravox - All Stood Still_segment_0.freq",
+      "actual_name": "Ultravox - All Stood Still",
+      "compressor": "xz",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.920465382414648
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9649696403549741
+        },
+        {
+          "name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+          "distance": 0.9736394557823128
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Ultravox - All Stood Still_segment_0.freq",
+      "actual_name": "Ultravox - All Stood Still",
+      "compressor": "zstd",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9610660771309261
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Metallica\uff1a The Memory Remains (Official Music Video)_segment_1_noise_0.1.freq",
+      "actual_name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+      "compressor": "gzip",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": false,
+      "error": null
+    },
+    {
+      "file": "Metallica\uff1a The Memory Remains (Official Music Video)_segment_1_noise_0.1.freq",
+      "actual_name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+      "compressor": "bzip2",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": false,
+      "error": null
+    },
+    {
+      "file": "Metallica\uff1a The Memory Remains (Official Music Video)_segment_1_noise_0.1.freq",
+      "actual_name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+      "compressor": "xz",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.963568425969173
+        },
+        {
+          "name": "Rainbow - I Surrender",
+          "distance": 0.9755928682707288
+        },
+        {
+          "name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+          "distance": 0.9768297168076497
+        }
+      ],
+      "correct": false,
+      "error": null
+    },
+    {
+      "file": "Metallica\uff1a The Memory Remains (Official Music Video)_segment_1_noise_0.1.freq",
+      "actual_name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+      "compressor": "zstd",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": false,
+      "error": null
+    },
+    {
+      "file": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)_segment_0.freq",
+      "actual_name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+      "compressor": "gzip",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+          "distance": 0.9941050046054649
+        },
+        {
+          "name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+          "distance": 0.9978772105689182
+        },
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9982724951179208
+        }
+      ],
+      "correct": false,
+      "error": null
+    },
+    {
+      "file": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)_segment_0.freq",
+      "actual_name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+      "compressor": "bzip2",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+          "distance": 0.9980378483660757
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)_segment_0.freq",
+      "actual_name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+      "compressor": "xz",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.957963568425969
+        },
+        {
+          "name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+          "distance": 0.9710884353741495
+        },
+        {
+          "name": "Rainbow - I Surrender",
+          "distance": 0.9745542669205469
+        }
+      ],
+      "correct": false,
+      "error": null
+    },
+    {
+      "file": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)_segment_0.freq",
+      "actual_name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+      "compressor": "zstd",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+          "distance": 0.9970755436303794
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Metallica\uff1a The Memory Remains (Official Music Video)_segment_1_noise_0.2.freq",
+      "actual_name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+      "compressor": "gzip",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": false,
+      "error": null
+    },
+    {
+      "file": "Metallica\uff1a The Memory Remains (Official Music Video)_segment_1_noise_0.2.freq",
+      "actual_name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+      "compressor": "bzip2",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": false,
+      "error": null
+    },
+    {
+      "file": "Metallica\uff1a The Memory Remains (Official Music Video)_segment_1_noise_0.2.freq",
+      "actual_name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+      "compressor": "xz",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.963568425969173
+        },
+        {
+          "name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+          "distance": 0.9729680029422582
+        },
+        {
+          "name": "Rainbow - I Surrender",
+          "distance": 0.9740349662454562
+        }
+      ],
+      "correct": false,
+      "error": null
+    },
+    {
+      "file": "Metallica\uff1a The Memory Remains (Official Music Video)_segment_1_noise_0.2.freq",
+      "actual_name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+      "compressor": "zstd",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": false,
+      "error": null
+    },
+    {
+      "file": "Ultravox - All Stood Still_segment_2_noise_0.2.freq",
+      "actual_name": "Ultravox - All Stood Still",
+      "compressor": "gzip",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9694848247745333
+        },
+        {
+          "name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+          "distance": 0.994168416141824
+        },
+        {
+          "name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+          "distance": 0.9985204800934885
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Ultravox - All Stood Still_segment_2_noise_0.2.freq",
+      "actual_name": "Ultravox - All Stood Still",
+      "compressor": "bzip2",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9626237623762374
+        },
+        {
+          "name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+          "distance": 0.9969724153397622
+        },
+        {
+          "name": "Rainbow - I Surrender",
+          "distance": 0.9995590342850843
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Ultravox - All Stood Still_segment_2_noise_0.2.freq",
+      "actual_name": "Ultravox - All Stood Still",
+      "compressor": "xz",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9353423612435626
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9677720691265763
+        },
+        {
+          "name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+          "distance": 0.9744897959183674
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Ultravox - All Stood Still_segment_2_noise_0.2.freq",
+      "actual_name": "Ultravox - All Stood Still",
+      "compressor": "zstd",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9732252517808891
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Ultravox - All Stood Still_segment_1_noise_0.2.freq",
+      "actual_name": "Ultravox - All Stood Still",
+      "compressor": "gzip",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.977515134044393
+        },
+        {
+          "name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+          "distance": 0.9937018894331698
+        },
+        {
+          "name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+          "distance": 0.9982792540217744
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Ultravox - All Stood Still_segment_1_noise_0.2.freq",
+      "actual_name": "Ultravox - All Stood Still",
+      "compressor": "bzip2",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9659653465346534
+        },
+        {
+          "name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+          "distance": 0.9950661583314643
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Ultravox - All Stood Still_segment_1_noise_0.2.freq",
+      "actual_name": "Ultravox - All Stood Still",
+      "compressor": "xz",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9444974251382795
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9551611396543671
+        },
+        {
+          "name": "Rainbow - I Surrender",
+          "distance": 0.9709191621949106
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Ultravox - All Stood Still_segment_1_noise_0.2.freq",
+      "actual_name": "Ultravox - All Stood Still",
+      "compressor": "zstd",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9783836895111764
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]_segment_1_noise_0.2.freq",
+      "actual_name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+      "compressor": "gzip",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+          "distance": 0.8865213386552042
+        },
+        {
+          "name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+          "distance": 0.9978128836164611
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]_segment_1_noise_0.2.freq",
+      "actual_name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+      "compressor": "bzip2",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+          "distance": 0.9110552763819094
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]_segment_1_noise_0.2.freq",
+      "actual_name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+      "compressor": "xz",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+          "distance": 0.8528911564625851
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9565623540401679
+        },
+        {
+          "name": "Rainbow - I Surrender",
+          "distance": 0.9729963648952743
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]_segment_1_noise_0.2.freq",
+      "actual_name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+      "compressor": "zstd",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+          "distance": 0.8849646821392533
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Metallica\uff1a The Memory Remains (Official Music Video)_segment_2.freq",
+      "actual_name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+      "compressor": "gzip",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": false,
+      "error": null
+    },
+    {
+      "file": "Metallica\uff1a The Memory Remains (Official Music Video)_segment_2.freq",
+      "actual_name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+      "compressor": "bzip2",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": false,
+      "error": null
+    },
+    {
+      "file": "Metallica\uff1a The Memory Remains (Official Music Video)_segment_2.freq",
+      "actual_name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+      "compressor": "xz",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.953759925268566
+        },
+        {
+          "name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+          "distance": 0.971312982714233
+        },
+        {
+          "name": "Rainbow - I Surrender",
+          "distance": 0.9719577635450924
+        }
+      ],
+      "correct": false,
+      "error": null
+    },
+    {
+      "file": "Metallica\uff1a The Memory Remains (Official Music Video)_segment_2.freq",
+      "actual_name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+      "compressor": "zstd",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": false,
+      "error": null
+    },
+    {
+      "file": "Mozart - Requiem - Sanctus - Herreweghe_segment_1_noise_0.1.freq",
+      "actual_name": "Mozart - Requiem - Sanctus - Herreweghe",
+      "compressor": "gzip",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9596083231334148
+        },
+        {
+          "name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+          "distance": 0.9998874278332
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Mozart - Requiem - Sanctus - Herreweghe_segment_1_noise_0.1.freq",
+      "actual_name": "Mozart - Requiem - Sanctus - Herreweghe",
+      "compressor": "bzip2",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.937606352807714
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Mozart - Requiem - Sanctus - Herreweghe_segment_1_noise_0.1.freq",
+      "actual_name": "Mozart - Requiem - Sanctus - Herreweghe",
+      "compressor": "xz",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.8865016347501167
+        },
+        {
+          "name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+          "distance": 0.9710884353741495
+        },
+        {
+          "name": "Rainbow - I Surrender",
+          "distance": 0.9724770642201835
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Mozart - Requiem - Sanctus - Herreweghe_segment_1_noise_0.1.freq",
+      "actual_name": "Mozart - Requiem - Sanctus - Herreweghe",
+      "compressor": "zstd",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Mozart - Requiem - Sanctus - Herreweghe_segment_0_noise_0.1.freq",
+      "actual_name": "Mozart - Requiem - Sanctus - Herreweghe",
+      "compressor": "gzip",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9632802937576497
+        },
+        {
+          "name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+          "distance": 0.9999356730475428
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Mozart - Requiem - Sanctus - Herreweghe_segment_0_noise_0.1.freq",
+      "actual_name": "Mozart - Requiem - Sanctus - Herreweghe",
+      "compressor": "bzip2",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9381735677821892
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Mozart - Requiem - Sanctus - Herreweghe_segment_0_noise_0.1.freq",
+      "actual_name": "Mozart - Requiem - Sanctus - Herreweghe",
+      "compressor": "xz",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.8822979915927137
+        },
+        {
+          "name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+          "distance": 0.9727891156462583
+        },
+        {
+          "name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+          "distance": 0.9740713497609416
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Mozart - Requiem - Sanctus - Herreweghe_segment_0_noise_0.1.freq",
+      "actual_name": "Mozart - Requiem - Sanctus - Herreweghe",
+      "compressor": "zstd",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Vangelis - Spiral (Audio)_segment_1_noise_0.1.freq",
+      "actual_name": "Vangelis - Spiral (Audio)",
+      "compressor": "gzip",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+          "distance": 0.9990994226656017
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": false,
+      "error": null
+    },
+    {
+      "file": "Vangelis - Spiral (Audio)_segment_1_noise_0.1.freq",
+      "actual_name": "Vangelis - Spiral (Audio)",
+      "compressor": "bzip2",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9753068798172995
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Vangelis - Spiral (Audio)_segment_1_noise_0.1.freq",
+      "actual_name": "Vangelis - Spiral (Audio)",
+      "compressor": "xz",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.947897951850521
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9593647828117701
+        },
+        {
+          "name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+          "distance": 0.9702380952380952
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Vangelis - Spiral (Audio)_segment_1_noise_0.1.freq",
+      "actual_name": "Vangelis - Spiral (Audio)",
+      "compressor": "zstd",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9809963187837641
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Metallica\uff1a The Memory Remains (Official Music Video)_segment_2_noise_0.2.freq",
+      "actual_name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+      "compressor": "gzip",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": false,
+      "error": null
+    },
+    {
+      "file": "Metallica\uff1a The Memory Remains (Official Music Video)_segment_2_noise_0.2.freq",
+      "actual_name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+      "compressor": "bzip2",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": false,
+      "error": null
+    },
+    {
+      "file": "Metallica\uff1a The Memory Remains (Official Music Video)_segment_2_noise_0.2.freq",
+      "actual_name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+      "compressor": "xz",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.957963568425969
+        },
+        {
+          "name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+          "distance": 0.9707613093048914
+        },
+        {
+          "name": "Rainbow - I Surrender",
+          "distance": 0.9740349662454562
+        }
+      ],
+      "correct": false,
+      "error": null
+    },
+    {
+      "file": "Metallica\uff1a The Memory Remains (Official Music Video)_segment_2_noise_0.2.freq",
+      "actual_name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+      "compressor": "zstd",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": false,
+      "error": null
+    },
+    {
+      "file": "Ultravox - All Stood Still_segment_2_noise_0.1.freq",
+      "actual_name": "Ultravox - All Stood Still",
+      "compressor": "gzip",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9692377383354609
+        },
+        {
+          "name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+          "distance": 0.9940517844646606
+        },
+        {
+          "name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+          "distance": 0.998568725307831
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Ultravox - All Stood Still_segment_2_noise_0.1.freq",
+      "actual_name": "Ultravox - All Stood Still",
+      "compressor": "bzip2",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9663366336633661
+        },
+        {
+          "name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+          "distance": 0.9965238842789862
+        },
+        {
+          "name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+          "distance": 0.9999711448289127
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Ultravox - All Stood Still_segment_2_noise_0.1.freq",
+      "actual_name": "Ultravox - All Stood Still",
+      "compressor": "xz",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9359145527369824
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9621672115833723
+        },
+        {
+          "name": "Rainbow - I Surrender",
+          "distance": 0.9729963648952743
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Ultravox - All Stood Still_segment_2_noise_0.1.freq",
+      "actual_name": "Ultravox - All Stood Still",
+      "compressor": "zstd",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9719970523212969
+        },
+        {
+          "name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+          "distance": 0.9999855224932195
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)_segment_0_noise_0.2.freq",
+      "actual_name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+      "compressor": "gzip",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+          "distance": 0.9918943813325145
+        },
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9972960793150065
+        },
+        {
+          "name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+          "distance": 0.9975394940685187
+        }
+      ],
+      "correct": false,
+      "error": null
+    },
+    {
+      "file": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)_segment_0_noise_0.2.freq",
+      "actual_name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+      "compressor": "bzip2",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+          "distance": 0.9978502897540096
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)_segment_0_noise_0.2.freq",
+      "actual_name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+      "compressor": "xz",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9523587108827649
+        },
+        {
+          "name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+          "distance": 0.9710884353741495
+        },
+        {
+          "name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+          "distance": 0.9746230231702829
+        }
+      ],
+      "correct": false,
+      "error": null
+    },
+    {
+      "file": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)_segment_0_noise_0.2.freq",
+      "actual_name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+      "compressor": "zstd",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+          "distance": 0.998016581571099
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]_segment_0_noise_0.1.freq",
+      "actual_name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+      "compressor": "gzip",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+          "distance": 0.9434448879336812
+        },
+        {
+          "name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+          "distance": 0.9981506001168606
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]_segment_0_noise_0.1.freq",
+      "actual_name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+      "compressor": "bzip2",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+          "distance": 0.9259631490787269
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]_segment_0_noise_0.1.freq",
+      "actual_name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+      "compressor": "xz",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+          "distance": 0.891156462585034
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9607659971975712
+        },
+        {
+          "name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+          "distance": 0.9790364104450165
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]_segment_0_noise_0.1.freq",
+      "actual_name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+      "compressor": "zstd",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+          "distance": 0.9439959636730574
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)_segment_1_noise_0.2.freq",
+      "actual_name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+      "compressor": "gzip",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+          "distance": 0.9969675763937483
+        },
+        {
+          "name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+          "distance": 0.9972821862586908
+        },
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9981222773020878
+        }
+      ],
+      "correct": false,
+      "error": null
+    },
+    {
+      "file": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)_segment_1_noise_0.2.freq",
+      "actual_name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+      "compressor": "bzip2",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+          "distance": 0.9972443311611802
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)_segment_1_noise_0.2.freq",
+      "actual_name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+      "compressor": "xz",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+          "distance": 0.9685374149659864
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9705744978981782
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9753957657829486
+        }
+      ],
+      "correct": false,
+      "error": null
+    },
+    {
+      "file": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)_segment_1_noise_0.2.freq",
+      "actual_name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+      "compressor": "zstd",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+          "distance": 0.9933403468810624
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Mozart - Requiem - Sanctus - Herreweghe_segment_2_noise_0.2.freq",
+      "actual_name": "Mozart - Requiem - Sanctus - Herreweghe",
+      "compressor": "gzip",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9507343941248468
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Mozart - Requiem - Sanctus - Herreweghe_segment_2_noise_0.2.freq",
+      "actual_name": "Mozart - Requiem - Sanctus - Herreweghe",
+      "compressor": "bzip2",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9347702779353373
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Mozart - Requiem - Sanctus - Herreweghe_segment_2_noise_0.2.freq",
+      "actual_name": "Mozart - Requiem - Sanctus - Herreweghe",
+      "compressor": "xz",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.8500700607192898
+        },
+        {
+          "name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+          "distance": 0.9724163295329165
+        },
+        {
+          "name": "Rainbow - I Surrender",
+          "distance": 0.9735156655703651
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Mozart - Requiem - Sanctus - Herreweghe_segment_2_noise_0.2.freq",
+      "actual_name": "Mozart - Requiem - Sanctus - Herreweghe",
+      "compressor": "zstd",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9971349441314104
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Metallica\uff1a The Memory Remains (Official Music Video)_segment_0_noise_0.1.freq",
+      "actual_name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+      "compressor": "gzip",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+          "distance": 0.9811056682995101
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9955524440966931
+        },
+        {
+          "name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+          "distance": 0.9983757444504602
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Metallica\uff1a The Memory Remains (Official Music Video)_segment_0_noise_0.1.freq",
+      "actual_name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+      "compressor": "bzip2",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+          "distance": 0.9827315541601256
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Metallica\uff1a The Memory Remains (Official Music Video)_segment_0_noise_0.1.freq",
+      "actual_name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+      "compressor": "xz",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+          "distance": 0.9525560867966162
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9759679572763684
+        },
+        {
+          "name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+          "distance": 0.9770408163265304
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Metallica\uff1a The Memory Remains (Official Music Video)_segment_0_noise_0.1.freq",
+      "actual_name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+      "compressor": "zstd",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+          "distance": 0.9880580705588511
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Mozart - Requiem - Sanctus - Herreweghe_segment_0_noise_0.2.freq",
+      "actual_name": "Mozart - Requiem - Sanctus - Herreweghe",
+      "compressor": "gzip",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.963892288861689
+        },
+        {
+          "name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+          "distance": 0.9999356730475428
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Mozart - Requiem - Sanctus - Herreweghe_segment_0_noise_0.2.freq",
+      "actual_name": "Mozart - Requiem - Sanctus - Herreweghe",
+      "compressor": "bzip2",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9393079977311399
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Mozart - Requiem - Sanctus - Herreweghe_segment_0_noise_0.2.freq",
+      "actual_name": "Mozart - Requiem - Sanctus - Herreweghe",
+      "compressor": "xz",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.8738907052779075
+        },
+        {
+          "name": "Rainbow - I Surrender",
+          "distance": 0.9724770642201835
+        },
+        {
+          "name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+          "distance": 0.9735196763515999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Mozart - Requiem - Sanctus - Herreweghe_segment_0_noise_0.2.freq",
+      "actual_name": "Mozart - Requiem - Sanctus - Herreweghe",
+      "compressor": "zstd",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Metallica\uff1a The Memory Remains (Official Music Video)_segment_1.freq",
+      "actual_name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+      "compressor": "gzip",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": false,
+      "error": null
+    },
+    {
+      "file": "Metallica\uff1a The Memory Remains (Official Music Video)_segment_1.freq",
+      "actual_name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+      "compressor": "bzip2",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": false,
+      "error": null
+    },
+    {
+      "file": "Metallica\uff1a The Memory Remains (Official Music Video)_segment_1.freq",
+      "actual_name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+      "compressor": "xz",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9593647828117701
+        },
+        {
+          "name": "Rainbow - I Surrender",
+          "distance": 0.9761121689458195
+        },
+        {
+          "name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+          "distance": 0.9784847370356748
+        }
+      ],
+      "correct": false,
+      "error": null
+    },
+    {
+      "file": "Metallica\uff1a The Memory Remains (Official Music Video)_segment_1.freq",
+      "actual_name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+      "compressor": "zstd",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": false,
+      "error": null
+    },
+    {
+      "file": "Vangelis - Spiral (Audio)_segment_0_noise_0.1.freq",
+      "actual_name": "Vangelis - Spiral (Audio)",
+      "compressor": "gzip",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.996244554604176
+        },
+        {
+          "name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+          "distance": 0.9986652157365168
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Vangelis - Spiral (Audio)_segment_0_noise_0.1.freq",
+      "actual_name": "Vangelis - Spiral (Audio)",
+      "compressor": "bzip2",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9805880673708249
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Vangelis - Spiral (Audio)_segment_0_noise_0.1.freq",
+      "actual_name": "Vangelis - Spiral (Audio)",
+      "compressor": "xz",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9607659971975712
+        },
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9676607977003233
+        },
+        {
+          "name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+          "distance": 0.9710884353741495
+        }
+      ],
+      "correct": false,
+      "error": null
+    },
+    {
+      "file": "Vangelis - Spiral (Audio)_segment_0_noise_0.1.freq",
+      "actual_name": "Vangelis - Spiral (Audio)",
+      "compressor": "zstd",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9921116794951474
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Rainbow - I Surrender_segment_1_noise_0.2.freq",
+      "actual_name": "Rainbow - I Surrender",
+      "compressor": "gzip",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Rainbow - I Surrender",
+          "distance": 0.971323612100311
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Rainbow - I Surrender_segment_1_noise_0.2.freq",
+      "actual_name": "Rainbow - I Surrender",
+      "compressor": "bzip2",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Rainbow - I Surrender",
+          "distance": 0.9604233270863188
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9995049504950495
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Rainbow - I Surrender_segment_1_noise_0.2.freq",
+      "actual_name": "Rainbow - I Surrender",
+      "compressor": "xz",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Rainbow - I Surrender",
+          "distance": 0.9174311926605505
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9649696403549741
+        },
+        {
+          "name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+          "distance": 0.9757263699889663
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Rainbow - I Surrender_segment_1_noise_0.2.freq",
+      "actual_name": "Rainbow - I Surrender",
+      "compressor": "zstd",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Rainbow - I Surrender",
+          "distance": 0.9809152256431886
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Ultravox - All Stood Still_segment_1.freq",
+      "actual_name": "Ultravox - All Stood Still",
+      "compressor": "gzip",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9788741094592925
+        },
+        {
+          "name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+          "distance": 0.9961511546536037
+        },
+        {
+          "name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+          "distance": 0.9986008887840597
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Ultravox - All Stood Still_segment_1.freq",
+      "actual_name": "Ultravox - All Stood Still",
+      "compressor": "bzip2",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9660891089108911
+        },
+        {
+          "name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+          "distance": 0.9951782910966585
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Ultravox - All Stood Still_segment_1.freq",
+      "actual_name": "Ultravox - All Stood Still",
+      "compressor": "xz",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9439252336448597
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.963568425969173
+        },
+        {
+          "name": "Rainbow - I Surrender",
+          "distance": 0.9735156655703651
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Ultravox - All Stood Still_segment_1.freq",
+      "actual_name": "Ultravox - All Stood Still",
+      "compressor": "zstd",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9789977892409727
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Vangelis - Spiral (Audio)_segment_2_noise_0.2.freq",
+      "actual_name": "Vangelis - Spiral (Audio)",
+      "compressor": "gzip",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+          "distance": 0.995947190666257
+        },
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.996094336788343
+        },
+        {
+          "name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+          "distance": 0.997550734779566
+        }
+      ],
+      "correct": false,
+      "error": null
+    },
+    {
+      "file": "Vangelis - Spiral (Audio)_segment_2_noise_0.2.freq",
+      "actual_name": "Vangelis - Spiral (Audio)",
+      "compressor": "bzip2",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9801598629745931
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Vangelis - Spiral (Audio)_segment_2_noise_0.2.freq",
+      "actual_name": "Vangelis - Spiral (Audio)",
+      "compressor": "xz",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9565623540401679
+        },
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9590370104204095
+        },
+        {
+          "name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+          "distance": 0.9740713497609416
+        }
+      ],
+      "correct": false,
+      "error": null
+    },
+    {
+      "file": "Vangelis - Spiral (Audio)_segment_2_noise_0.2.freq",
+      "actual_name": "Vangelis - Spiral (Audio)",
+      "compressor": "zstd",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9946933116603717
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]_segment_1_noise_0.1.freq",
+      "actual_name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+      "compressor": "gzip",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+          "distance": 0.8826527479275407
+        },
+        {
+          "name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+          "distance": 0.997796801878347
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]_segment_1_noise_0.1.freq",
+      "actual_name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+      "compressor": "bzip2",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+          "distance": 0.9092127303182578
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]_segment_1_noise_0.1.freq",
+      "actual_name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+      "compressor": "xz",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+          "distance": 0.8520408163265305
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9593647828117701
+        },
+        {
+          "name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+          "distance": 0.9746230231702829
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]_segment_1_noise_0.1.freq",
+      "actual_name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+      "compressor": "zstd",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+          "distance": 0.881432896064581
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Metallica\uff1a The Memory Remains (Official Music Video)_segment_0.freq",
+      "actual_name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+      "compressor": "gzip",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+          "distance": 0.9832050384884532
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9965407898529836
+        },
+        {
+          "name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+          "distance": 0.9984883166172598
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Metallica\uff1a The Memory Remains (Official Music Video)_segment_0.freq",
+      "actual_name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+      "compressor": "bzip2",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+          "distance": 0.9791433056739177
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Metallica\uff1a The Memory Remains (Official Music Video)_segment_0.freq",
+      "actual_name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+      "compressor": "xz",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+          "distance": 0.9509010665685914
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9719757122839793
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9748235742895288
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Metallica\uff1a The Memory Remains (Official Music Video)_segment_0.freq",
+      "actual_name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+      "compressor": "zstd",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+          "distance": 0.9875897596003747
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Metallica\uff1a The Memory Remains (Official Music Video)_segment_0_noise_0.2.freq",
+      "actual_name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+      "compressor": "gzip",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+          "distance": 0.9816888266853278
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9953053576576203
+        },
+        {
+          "name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+          "distance": 0.9984239896648027
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Metallica\uff1a The Memory Remains (Official Music Video)_segment_0_noise_0.2.freq",
+      "actual_name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+      "compressor": "bzip2",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+          "distance": 0.9795918367346937
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Metallica\uff1a The Memory Remains (Official Music Video)_segment_0_noise_0.2.freq",
+      "actual_name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+      "compressor": "xz",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+          "distance": 0.9503493931592497
+        },
+        {
+          "name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+          "distance": 0.9761904761904762
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9765401487697882
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Metallica\uff1a The Memory Remains (Official Music Video)_segment_0_noise_0.2.freq",
+      "actual_name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+      "compressor": "zstd",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+          "distance": 0.987940992819232
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]_segment_2.freq",
+      "actual_name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+      "compressor": "gzip",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+          "distance": 0.942523794903285
+        },
+        {
+          "name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+          "distance": 0.9980058644738323
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]_segment_2.freq",
+      "actual_name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+      "compressor": "bzip2",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+          "distance": 0.9254606365159128
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]_segment_2.freq",
+      "actual_name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+      "compressor": "xz",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+          "distance": 0.8860544217687073
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.949556282111163
+        },
+        {
+          "name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+          "distance": 0.9707613093048914
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]_segment_2.freq",
+      "actual_name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+      "compressor": "zstd",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+          "distance": 0.936259670366633
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Rainbow - I Surrender_segment_0_noise_0.1.freq",
+      "actual_name": "Rainbow - I Surrender",
+      "compressor": "gzip",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Rainbow - I Surrender",
+          "distance": 0.9550174307455861
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9992587406827822
+        },
+        {
+          "name": "Beethoven 5th Symphony in C Minor Op.67- Herbert Von Karajan (1080 60fps)",
+          "distance": 0.9995336295946866
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Rainbow - I Surrender_segment_0_noise_0.1.freq",
+      "actual_name": "Rainbow - I Surrender",
+      "compressor": "bzip2",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Rainbow - I Surrender",
+          "distance": 0.9560136699371623
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9991336633663365
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Rainbow - I Surrender_segment_0_noise_0.1.freq",
+      "actual_name": "Rainbow - I Surrender",
+      "compressor": "xz",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Rainbow - I Surrender",
+          "distance": 0.901852172407824
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9677720691265763
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9736791913026892
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Rainbow - I Surrender_segment_0_noise_0.1.freq",
+      "actual_name": "Rainbow - I Surrender",
+      "compressor": "zstd",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Rainbow - I Surrender",
+          "distance": 0.9453816954871361
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Mozart - Requiem - Sanctus - Herreweghe_segment_1.freq",
+      "actual_name": "Mozart - Requiem - Sanctus - Herreweghe",
+      "compressor": "gzip",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9611383108935128
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Mozart - Requiem - Sanctus - Herreweghe_segment_1.freq",
+      "actual_name": "Mozart - Requiem - Sanctus - Herreweghe",
+      "compressor": "bzip2",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9401588201928529
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Mozart - Requiem - Sanctus - Herreweghe_segment_1.freq",
+      "actual_name": "Mozart - Requiem - Sanctus - Herreweghe",
+      "compressor": "xz",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.8808967772069126
+        },
+        {
+          "name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+          "distance": 0.971938775510204
+        },
+        {
+          "name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+          "distance": 0.9729680029422582
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Mozart - Requiem - Sanctus - Herreweghe_segment_1.freq",
+      "actual_name": "Mozart - Requiem - Sanctus - Herreweghe",
+      "compressor": "zstd",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Rainbow - I Surrender_segment_1_noise_0.1.freq",
+      "actual_name": "Rainbow - I Surrender",
+      "compressor": "gzip",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Rainbow - I Surrender",
+          "distance": 0.9710986992540388
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Rainbow - I Surrender_segment_1_noise_0.1.freq",
+      "actual_name": "Rainbow - I Surrender",
+      "compressor": "bzip2",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Rainbow - I Surrender",
+          "distance": 0.9646125013780179
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Rainbow - I Surrender_segment_1_noise_0.1.freq",
+      "actual_name": "Rainbow - I Surrender",
+      "compressor": "xz",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Rainbow - I Surrender",
+          "distance": 0.9200276960360046
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9649696403549741
+        },
+        {
+          "name": "Carlos Paredes - Canc\u0327a\u0303o Verdes Anos [Official Audio]",
+          "distance": 0.9736394557823128
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Rainbow - I Surrender_segment_1_noise_0.1.freq",
+      "actual_name": "Rainbow - I Surrender",
+      "compressor": "zstd",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Vangelis - Spiral (Audio)",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": false,
+      "error": null
+    },
+    {
+      "file": "Rainbow - I Surrender_segment_1.freq",
+      "actual_name": "Rainbow - I Surrender",
+      "compressor": "gzip",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Rainbow - I Surrender",
+          "distance": 0.9727855456010794
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Rainbow - I Surrender_segment_1.freq",
+      "actual_name": "Rainbow - I Surrender",
+      "compressor": "bzip2",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Rainbow - I Surrender",
+          "distance": 0.9608642928012348
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Rainbow - I Surrender_segment_1.freq",
+      "actual_name": "Rainbow - I Surrender",
+      "compressor": "xz",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Rainbow - I Surrender",
+          "distance": 0.9215855980612773
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9649696403549741
+        },
+        {
+          "name": "Metallica\uff1a The Memory Remains (Official Music Video)",
+          "distance": 0.9746230231702829
+        }
+      ],
+      "correct": true,
+      "error": null
+    },
+    {
+      "file": "Rainbow - I Surrender_segment_1.freq",
+      "actual_name": "Rainbow - I Surrender",
+      "compressor": "zstd",
+      "noise_level": 0.0,
+      "duration": 10.0,
+      "top_matches": [
+        {
+          "name": "Rainbow - I Surrender",
+          "distance": 0.9847110923660902
+        },
+        {
+          "name": "Mozart - Requiem - Sanctus - Herreweghe",
+          "distance": 0.9999999999999999
+        },
+        {
+          "name": "Ultravox - All Stood Still",
+          "distance": 0.9999999999999999
+        }
+      ],
+      "correct": true,
+      "error": null
+    }
+  ],
+  "summary": {
+    "total_tests": 252,
+    "correct_identifications": 200,
+    "by_compressor": {
+      "gzip": {
+        "total": 63,
+        "correct": 47,
+        "errors": 0,
+        "accuracy": 0.746031746031746
+      },
+      "bzip2": {
+        "total": 63,
+        "correct": 57,
+        "errors": 0,
+        "accuracy": 0.9047619047619048
+      },
+      "xz": {
+        "total": 63,
+        "correct": 42,
+        "errors": 0,
+        "accuracy": 0.6666666666666666
+      },
+      "zstd": {
+        "total": 63,
+        "correct": 54,
+        "errors": 0,
+        "accuracy": 0.8571428571428571
+      }
+    },
+    "by_noise_level": {},
+    "by_duration": {
+      "10.0": {
+        "total": 252,
+        "correct": 200,
+        "errors": 0,
+        "accuracy": 0.7936507936507936
+      }
+    },
+    "compression_errors": {
+      "gzip": 0,
+      "bzip2": 0,
+      "xz": 0,
+      "zstd": 0
+    },
+    "accuracy": 0.7936507936507936
+  },
+  "evaluation": {
+    "gzip": {
+      "correct": 47,
+      "total": 63,
+      "accuracy": 0.746031746031746
+    },
+    "bzip2": {
+      "correct": 57,
+      "total": 63,
+      "accuracy": 0.9047619047619048
+    },
+    "xz": {
+      "correct": 42,
+      "total": 63,
+      "accuracy": 0.6666666666666666
+    },
+    "zstd": {
+      "correct": 54,
+      "total": 63,
+      "accuracy": 0.8571428571428571
+    }
+  },
+  "parameters": {
+    "music_dir": "database/",
+    "segments_per_file": 3,
+    "duration": 10.0,
+    "noise_levels": [
+      0.0,
+      0.1,
+      0.2
+    ],
+    "compressors": [
+      "gzip",
+      "bzip2",
+      "xz",
+      "zstd"
+    ],
+    "timestamp": "20250525_224750"
+  }
+}

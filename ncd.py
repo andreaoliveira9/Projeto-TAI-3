@@ -85,30 +85,41 @@ def calculate_ncd(file1, file2, compressor="gzip"):
     # Clean up
     os.unlink(concat_file)
     
-    # Calculate NCD
-    if min(c_x, c_y) == 0:
+    # If any compression failed or resulted in zero size, return maximum distance
+    if c_x == 0 or c_y == 0 or c_xy == 0:
         return 1.0
     
-    # Try different NCD formulas
+    # Try different NCD formulas with safe handling
     
     # Standard NCD formula
-    ncd1 = (c_xy - min(c_x, c_y)) / max(c_x, c_y)
-    
-    # Alternative formula that sometimes works better
-    ncd2 = (2 * c_xy - c_x - c_y) / (c_x + c_y)
-    
-    # Another alternative that emphasizes the difference
-    ncd3 = c_xy / (c_x + c_y - c_xy)
-    
-    # Use the formula that gives the most discriminative result
+    ncd = (c_xy - min(c_x, c_y)) / max(c_x, c_y)
+    #
+    ## Alternative formula that sometimes works better
+    #try:
+    #    ncd2 = (2 * c_xy - c_x - c_y) / (c_x + c_y)
+    #except ZeroDivisionError:
+    #    ncd2 = 1.0
+    #
+    ## Another alternative that emphasizes the difference
+    #try:
+    #    denominator = c_x + c_y - c_xy
+    #    # Check for zero or negative denominator
+    #    if denominator <= 0:
+    #        ncd3 = 1.0
+    #    else:
+    #        ncd3 = c_xy / denominator
+    #except ZeroDivisionError:
+    #    ncd3 = 1.0
+    #
+    ## Use the formula that gives the most discriminative result
     # For music identification, we want the formula that gives the smallest value for similar files
-    if file1.split('/')[-1].split('_')[0] == file2.split('/')[-1].split('.')[0]:
-        # If we're comparing a segment with its source (based on filename pattern), 
-        # use the formula that gives the smallest value
-        ncd = min(ncd1, ncd2, ncd3)
-    else:
-        # Otherwise use the standard formula
-        ncd = ncd1
+    #if file1.split('/')[-1].split('_')[0] == file2.split('/')[-1].split('.')[0]:
+    #    # If we're comparing a segment with its source (based on filename pattern), 
+    #    # use the formula that gives the smallest value
+    #    ncd = min(ncd1, ncd2, ncd3)
+    #else:
+    #    # Otherwise use the standard formula
+    #    ncd = ncd1
     
     # Ensure NCD is in valid range [0, 1]
     ncd = max(0.0, min(1.0, ncd))
