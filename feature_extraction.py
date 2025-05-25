@@ -8,7 +8,7 @@ import json
 from audio_processing import convert_to_mono_wav
 
 # Path to GetMaxFreqs executable - update this based on your system
-GETMAXFREQS_PATH = "./GetMaxFreqs"
+GETMAXFREQS_PATH = "./GetMaxFreqs_exec"
 
 def check_getmaxfreqs():
     """Check if GetMaxFreqs executable exists and is callable"""
@@ -35,16 +35,26 @@ def convert_to_frequencies_external(audio_file, output_file=None):
     if output_file is None:
         output_file = os.path.splitext(audio_file)[0] + ".freq"
     
-    # Ensure audio is in mono WAV format
+    # Ensure audio is in WAV format
     mono_wav = convert_to_mono_wav(audio_file)
     
+    # GetMaxFreqs requires stereo (2 channels) audio
+    stereo_wav = tempfile.mktemp(suffix='.wav')
     try:
-        # Run GetMaxFreqs
-        subprocess.run([GETMAXFREQS_PATH, mono_wav, output_file], check=True)
+        # Convert mono to stereo using ffmpeg
+        subprocess.run(["ffmpeg", "-i", mono_wav, "-ac", "2", stereo_wav], 
+                      check=True, stdout=subprocess.DEVNULL, stderr=subprocess.DEVNULL)
+        
+        # Run GetMaxFreqs on the stereo file
+        subprocess.run([GETMAXFREQS_PATH, "-w", output_file, stereo_wav], check=True)
         return output_file
     except subprocess.CalledProcessError as e:
         print(f"Error calling GetMaxFreqs: {e}")
         return None
+    finally:
+        # Clean up temporary file
+        if os.path.exists(stereo_wav):
+            os.remove(stereo_wav)
 
 def convert_to_frequencies_internal(audio_file, output_file=None):
     """
@@ -142,9 +152,15 @@ def convert_to_frequencies(audio_file, output_file=None):
     Returns:
         str: Path to the frequency file or None if failed
     """
-    # Always use internal implementation instead of trying to use GetMaxFreqs
-    print("Using internal frequency extraction")
-    return convert_to_frequencies_internal(audio_file, output_file)
+    # First try using the external GetMaxFreqs tool
+    result = convert_to_frequencies_external(audio_file, output_file)
+    
+    # If external conversion fails, fall back to internal implementation
+    if result is None:
+        print("External conversion failed, falling back to internal implementation")
+        return convert_to_frequencies_internal(audio_file, output_file)
+    
+    return result
 
 def process_directory(directory):
     """
@@ -153,21 +169,27 @@ def process_directory(directory):
     Args:
         directory (str): Directory containing audio files
     """
-    os.makedirs("database", exist_ok=True)
+    os.makedirs(directory, exist_ok=True)
     
+    wav_count = 0
+
     for filename in os.listdir(directory):
         filepath = os.path.join(directory, filename)
         
         # Skip directories and non-audio files
         if os.path.isdir(filepath) or not filename.lower().endswith(('.mp3', '.wav', '.flac', '.ogg', '.m4a')):
             continue
-            
+
+        wav_count += 1
         print(f"Processing {filename}...")
         
         # Generate output path in database directory
-        output_file = os.path.join("database", os.path.splitext(filename)[0] + ".freq")
+        output_file = os.path.join(directory, os.path.splitext(filename)[0] + ".freq")
         
         # Convert to frequency representation
         convert_to_frequencies(filepath, output_file)
-        
-    print(f"Processed {len(os.listdir('database'))} files to database directory") 
+    
+    # Count number of .freq files in output directory
+    freq_count = sum(1 for f in os.listdir(directory) if f.lower().endswith('.freq'))
+
+    print(f"✅ Successfully processed {freq_count}/{wav_count} files")

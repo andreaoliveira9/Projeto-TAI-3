@@ -11,7 +11,7 @@ def plot_compression_sizes(files, compressors=None):
     Plot the compression sizes for different files and compressors
     """
     if compressors is None:
-        compressors = ["gzip", "bzip2", "lzma", "zstd"]
+        compressors = ["gzip", "bzip2", "xz", "zstd"]
     
     from ncd import compress_file
     
@@ -48,7 +48,7 @@ def plot_ncd_comparison(file_pairs, compressors=None):
     Plot NCD values for pairs of files using different compressors
     """
     if compressors is None:
-        compressors = ["gzip", "bzip2", "lzma", "zstd"]
+        compressors = ["gzip", "bzip2", "xz", "zstd"]
     
     ncd_values = {}
     pair_labels = []
@@ -107,7 +107,7 @@ def plot_compressor_accuracy(results):
 def main():
     parser = argparse.ArgumentParser(description="Evaluate and compare different compressors")
     parser.add_argument("--test-dir", required=True, help="Directory with test segments")
-    parser.add_argument("--compressors", nargs="+", default=["gzip", "bzip2", "lzma", "zstd"], 
+    parser.add_argument("--compressors", nargs="+", default=["gzip", "bzip2", "xz", "zstd"], 
                         help="Compressors to evaluate")
     
     args = parser.parse_args()

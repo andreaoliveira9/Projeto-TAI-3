@@ -10,7 +10,7 @@ def compress_file(filename, compressor="gzip"):
     
     Args:
         filename (str): Path to the file to compress
-        compressor (str): Compressor to use (gzip, bzip2, lzma, zstd)
+        compressor (str): Compressor to use (gzip, bzip2, lzma, zstd, xz)
         
     Returns:
         int: Size of the compressed file in bytes
@@ -19,6 +19,7 @@ def compress_file(filename, compressor="gzip"):
         "gzip": ["gzip", "-c"],
         "bzip2": ["bzip2", "-c"],
         "lzma": ["xz", "--lzma", "-c"],
+        "xz": ["xz", "-c"],
         "zstd": ["zstd", "-c"]
     }
     
@@ -41,7 +42,6 @@ def compress_file(filename, compressor="gzip"):
 def concatenate_files(file1, file2):
     """
     Concatenate two files and return the path to the concatenated file.
-    If the files are JSON frequency representations, merge them intelligently.
     
     Args:
         file1 (str): Path to the first file
@@ -51,42 +51,10 @@ def concatenate_files(file1, file2):
         str: Path to the temporary concatenated file
     """
     import tempfile
-    import json
     
     temp_file = tempfile.mktemp()
     
-    # Check if files are JSON frequency representations
-    if file1.endswith('.freq') and file2.endswith('.freq'):
-        try:
-            with open(file1, 'r') as f1:
-                data1 = json.load(f1)
-            with open(file2, 'r') as f2:
-                data2 = json.load(f2)
-            
-            # Check if the files have the new structure
-            if isinstance(data1, dict) and 'freq_frames' in data1:
-                # Merge the data
-                merged_data = {
-                    "freq_frames": data1["freq_frames"] + data2["freq_frames"],
-                    "mfcc": data1["mfcc"] + data2["mfcc"],
-                    "centroid": (data1["centroid"] + data2["centroid"]) / 2,
-                    "duration": data1["duration"] + data2["duration"]
-                }
-                
-                # Handle additional features if they exist
-                for feature in ["mfcc_std", "contrast", "chroma"]:
-                    if feature in data1 and feature in data2:
-                        merged_data[feature] = data1[feature] + data2[feature]
-                
-                # Write the merged data
-                with open(temp_file, 'w') as outfile:
-                    json.dump(merged_data, outfile)
-                return temp_file
-        except (json.JSONDecodeError, KeyError):
-            # If there's an error, fall back to binary concatenation
-            pass
-    
-    # Default binary concatenation
+    # Binary concatenation for all files
     with open(temp_file, 'wb') as outfile:
         for filename in [file1, file2]:
             with open(filename, 'rb') as infile:

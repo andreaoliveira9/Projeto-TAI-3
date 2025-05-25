@@ -116,10 +116,30 @@ where C(x) is the compressed size of x, and C(x,y) is the compressed size of x a
 - `/segments`: Contains extracted segments for testing
 - `evaluate_compressors.py`: Script to evaluate different compressors
 - `audio_processing.py`: Functions for audio handling
+   - `extract_random_segment`: Extract a random segment from a music file
+   - `add_noise`: Add noise to an audio file
+   - `convert_to_mono_wav`: Convert an audio file to mono WAV format
 - `feature_extraction.py`: Functions for converting audio to frequency features
+   - `check_getmaxfreqs`: Check if GetMaxFreqs executable exists and is callable
+   - `convert_to_frequencies_external`: Convert audio file to frequency representation using external GetMaxFreqs tool
+   - `convert_to_frequencies_internal`: Convert audio file to frequency representation using internal implementation
+   - `convert_to_frequencies`: Convert audio file to frequency representation
+   - `process_directory`: Process all music files in a directory to database
 - `ncd.py`: Functions for NCD calculation
+   - `compress_file`: Compress a file and return the size of the compressed file
+   - `concatenate_files`: Concatenate two files and return the size of the concatenated file
+   - `calculate_ncd`: Calculate NCD between two files
+   - `calculate_ncd_with_database`: Calculate NCD between a segment and the database
+   - `compare_compressors`: Compare the performance of different compressors
+
 - `music_identification.py`: Functions for music identification
 - `main.py`: Main command line interface
+   - `process_db`: Process all music files in a directory to database
+   - `extract`: Extract a random segment from a music file
+   - `convert`: Convert an audio file to frequency representation
+   - `noise`: Add noise to an audio file
+   - `compare`: Compare a segment against the database
+   - `evaluate_compressors`: Evaluate and compare performance of different compressors
 
 ## References
 

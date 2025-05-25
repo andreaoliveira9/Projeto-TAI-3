@@ -34,7 +34,7 @@ def evaluate_compressor_performance(directory, compressors=None):
     from ncd import calculate_ncd_with_database
     
     if compressors is None:
-        compressors = ["gzip", "bzip2", "lzma", "zstd"]
+        compressors = ["gzip", "bzip2", "xz", "zstd"]
     
     results = defaultdict(lambda: {"correct": 0, "total": 0})
     

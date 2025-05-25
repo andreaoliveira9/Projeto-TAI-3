@@ -83,7 +83,6 @@ def main():
     elif args.command == "process_db":
         from feature_extraction import process_directory
         process_directory(args.directory)
-        print(f"Processed music files from {args.directory} to database")
     
     else:
         parser.print_help()

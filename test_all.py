@@ -63,7 +63,7 @@ def add_noise_to_segment(segment_file, noise_level):
     return noisy_file
 
 def run_comprehensive_test(music_dir, durations=[10, 15, 20], noise_levels=[0.0, 0.1, 0.2], 
-                         compressors=["gzip", "bzip2", "lzma", "zstd"]):
+                         compressors=["gzip", "bzip2", "xz", "zstd"]):
     """Run comprehensive tests with different parameters"""
     results = defaultdict(dict)
     
@@ -211,8 +211,8 @@ def main():
                       help="Segment durations in seconds to test (default: 10 15 20)")
     parser.add_argument("--noise-levels", type=float, nargs="+", default=[0.0, 0.1, 0.2],
                       help="Noise levels to test (default: 0.0 0.1 0.2)")
-    parser.add_argument("--compressors", nargs="+", default=["gzip", "bzip2", "lzma", "zstd"],
-                      help="Compressors to test (default: gzip bzip2 lzma zstd)")
+    parser.add_argument("--compressors", nargs="+", default=["gzip", "bzip2", "xz", "zstd"],
+                      help="Compressors to test (default: gzip bzip2 xz zstd)")
     
     args = parser.parse_args()
     
