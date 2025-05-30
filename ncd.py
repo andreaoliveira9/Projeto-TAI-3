@@ -18,8 +18,8 @@ def compress_file(filename, compressor="gzip"):
     compressor_cmds = {
         "gzip": ["gzip", "-c"],
         "bzip2": ["bzip2", "-c"],
-        "lzma": ["xz", "--lzma", "-c"],
-        "xz": ["xz", "-c"],
+        "lzma": ["lzma", "-c"],
+        #"xz": ["xz", "-c"],
         "zstd": ["zstd", "-c"]
     }
     

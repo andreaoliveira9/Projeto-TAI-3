@@ -115,7 +115,7 @@ def run_tests(compressors=None):
         Dictionary with detailed test results
     """
     if compressors is None:
-        compressors = ["gzip", "bzip2", "xz", "zstd"]
+        compressors = ["gzip", "bzip2", "lzma", "zstd"]
     
     # Find test frequency files
     test_files = [os.path.join("test", f) for f in os.listdir("test") if f.endswith(".freq")]
@@ -310,7 +310,7 @@ def main():
     parser.add_argument("--noise-levels", type=float, nargs="+", default=[0.0, 0.1, 0.2], 
                         help="Noise levels to test (default: 0.0 0.1 0.2)")
     parser.add_argument("--skip-setup", action="store_true", help="Skip setup and use existing test files")
-    parser.add_argument("--compressors", nargs="+", default=["gzip", "bzip2", "xz", "zstd"], 
+    parser.add_argument("--compressors", nargs="+", default=["gzip", "bzip2", "lzma", "zstd"], 
                         help="Compressors to test (default: gzip bzip2 xz zstd)")
     parser.add_argument("--output", help="JSON file to save results (default: test_results_TIMESTAMP.json)")
     
