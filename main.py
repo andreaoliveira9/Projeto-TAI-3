@@ -41,6 +41,11 @@ def main():
     noise_parser.add_argument("-l", "--level", type=float, default=0.1, 
                             help="Noise level (0.0-1.0)")
     noise_parser.add_argument("-o", "--output", help="Output filename (default: input_noisy.wav)")
+    noise_parser.add_argument("--sox", action="store_true",
+                            help="Use SoX instead of librosa to add noise")
+    noise_parser.add_argument("--type", choices=["whitenoise", "pinknoise"], default="whitenoise",
+                            help="Type of noise to add (default: whitenoise)")
+    
     
     # Process database command
     db_parser = subparsers.add_parser("process_db", help="Process all music files in a directory to database")
@@ -77,8 +82,8 @@ def main():
     
     elif args.command == "noise":
         output = args.output if args.output else f"{os.path.splitext(args.audio_file)[0]}_noisy.wav"
-        add_noise(args.audio_file, output, args.level)
-        print(f"Added noise (level {args.level}) to {args.audio_file}, saved as {output}")
+        add_noise(args.audio_file, output, noise_level=args.level, use_sox=args.sox, noise_type=args.type)
+        print(f"Added {args.type} (level {args.level}) to {args.audio_file} using {'SoX' if args.sox else 'librosa'}, saved as {output}")
         
     elif args.command == "process_db":
         from feature_extraction import process_directory

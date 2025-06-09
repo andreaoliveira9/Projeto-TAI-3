@@ -5,6 +5,7 @@ import numpy as np
 from pydub import AudioSegment
 import librosa
 import soundfile as sf
+import subprocess
 
 def extract_random_segment(input_file, output_file, duration=10.0):
     """
@@ -47,36 +48,62 @@ def extract_random_segment(input_file, output_file, duration=10.0):
         print(f"Error extracting segment: {e}")
         return None
 
-def add_noise(input_file, output_file, noise_level=0.1):
+
+def add_noise(input_file, output_file, noise_level=0.1, use_sox=False, noise_type="whitenoise"):
     """
-    Add white noise to an audio file
+    Add white or pink noise to an audio file using either librosa+numpy or SoX.
     
     Args:
         input_file (str): Path to input audio file
         output_file (str): Path to output noisy audio file
         noise_level (float): Noise level (0.0-1.0)
+        use_sox (bool): If True, use SoX instead of librosa
+        noise_type (str): 'whitenoise' or 'pinknoise'
+    Returns:
+        str or None: Path to output or None on failure
     """
-    try:
-        # Load audio file using librosa
-        y, sr = librosa.load(input_file, sr=None)
+    if use_sox:
+        try:
+            # Get duration of input audio
+            result = subprocess.run(["soxi", "-D", input_file], capture_output=True, text=True)
+            duration = float(result.stdout.strip())
+
+            sox_command = (
+                f'sox -c 2 -r 44100 "{input_file}" -p | '
+                f'sox -m -p "|sox -n -p synth {duration} {noise_type} vol {noise_level} rate 44100 channels 2" '
+                f'"{output_file}"'
+            )
+
+            subprocess.run(sox_command, shell=True, check=True)
+
+            return output_file
+
+        except Exception as e:
+            print(f"Error adding noise with SoX: {e}")
+            return None
+
+    else:
+        try:
+            # Load audio file using librosa
+            y, sr = librosa.load(input_file, sr=None)
+            
+            # Generate white noise with the same shape as the signal
+            noise = np.random.normal(0, y.std() * noise_level, y.shape)
+            
+            # Add noise to the signal
+            y_noisy = y + noise
+            
+            # Ensure the output stays in the [-1, 1] range
+            y_noisy = np.clip(y_noisy, -1.0, 1.0)
+            
+            # Write the noisy audio to file
+            sf.write(output_file, y_noisy, sr)
         
-        # Generate white noise with the same shape as the signal
-        noise = np.random.normal(0, y.std() * noise_level, y.shape)
-        
-        # Add noise to the signal
-        y_noisy = y + noise
-        
-        # Ensure the output stays in the [-1, 1] range
-        y_noisy = np.clip(y_noisy, -1.0, 1.0)
-        
-        # Write the noisy audio to file
-        sf.write(output_file, y_noisy, sr)
-        
-        return output_file
-        
-    except Exception as e:
-        print(f"Error adding noise: {e}")
-        return None
+            return output_file
+            
+        except Exception as e:
+            print(f"Error adding noise with librosa: {e}")
+            return None
 
 def convert_to_mono_wav(input_file, output_file=None):
     """
