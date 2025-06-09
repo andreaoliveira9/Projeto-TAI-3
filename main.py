@@ -45,7 +45,10 @@ def main():
                             help="Use SoX instead of librosa to add noise")
     noise_parser.add_argument("--type", choices=["whitenoise", "pinknoise"], default="whitenoise",
                             help="Type of noise to add (default: whitenoise)")
-    
+    noise_parser.add_argument("--reverb", action="store_true", help="Add reverb")
+    noise_parser.add_argument("--eq", action="store_true", help="Apply EQ filter")
+    noise_parser.add_argument("--speed", type=float, help="Apply speed change (e.g., 1.1)")
+    noise_parser.add_argument("--pitch", type=int, help="Apply pitch shift in cents (e.g., -200)")
     
     # Process database command
     db_parser = subparsers.add_parser("process_db", help="Process all music files in a directory to database")
@@ -82,7 +85,17 @@ def main():
     
     elif args.command == "noise":
         output = args.output if args.output else f"{os.path.splitext(args.audio_file)[0]}_noisy.wav"
-        add_noise(args.audio_file, output, noise_level=args.level, use_sox=args.sox, noise_type=args.type)
+        add_noise(
+            args.audio_file,
+            output,
+            noise_level=args.level,
+            use_sox=args.sox,
+            noise_type=args.type,
+            add_reverb=args.reverb,
+            apply_eq=args.eq,
+            speed=args.speed,
+            pitch=args.pitch
+        )
         print(f"Added {args.type} (level {args.level}) to {args.audio_file} using {'SoX' if args.sox else 'librosa'}, saved as {output}")
         
     elif args.command == "process_db":

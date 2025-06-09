@@ -49,7 +49,8 @@ def extract_random_segment(input_file, output_file, duration=10.0):
         return None
 
 
-def add_noise(input_file, output_file, noise_level=0.1, use_sox=False, noise_type="whitenoise"):
+def add_noise(input_file, output_file, noise_level=0.1, use_sox=False, noise_type="whitenoise",
+              add_reverb=False, apply_eq=False, speed=None, pitch=None):    
     """
     Add white or pink noise to an audio file using either librosa+numpy or SoX.
     
@@ -68,14 +69,44 @@ def add_noise(input_file, output_file, noise_level=0.1, use_sox=False, noise_typ
             result = subprocess.run(["soxi", "-D", input_file], capture_output=True, text=True)
             duration = float(result.stdout.strip())
 
-            sox_command = (
-                f'sox -c 2 -r 44100 "{input_file}" -p | '
-                f'sox -m -p "|sox -n -p synth {duration} {noise_type} vol {noise_level} rate 44100 channels 2" '
-                f'"{output_file}"'
-            )
+            sample_rate = get_sample_rate(input_file)
+
+            # If noise_level is 0, skip noise synthesis and apply effects directly
+
+            if noise_level == 0:
+                effects_chain = build_sox_effects_chain(
+                    duration=duration,
+                    noise_type=noise_type,
+                    noise_level=0,
+                    reverb=add_reverb,
+                    eq=apply_eq,
+                    speed=speed,
+                    pitch=pitch,
+                    sample_rate=sample_rate
+                )
+
+
+                sox_command = f'sox "{input_file}" "{output_file}" {effects_chain}'
+                print("SOX CMD:", sox_command)
+
+            else:
+                effects_chain = build_sox_effects_chain(
+                    duration=duration,
+                    noise_type=noise_type,
+                    noise_level=noise_level,
+                    reverb=add_reverb,
+                    eq=apply_eq,
+                    speed=speed,
+                    pitch=pitch,
+                    sample_rate=sample_rate
+                )
+                sox_command = (
+                    f'sox "{input_file}" -p | '
+                    f'sox -m -p "|sox -n -p {effects_chain}" '
+                    f'"{output_file}"'
+                )
 
             subprocess.run(sox_command, shell=True, check=True)
-
             return output_file
 
         except Exception as e:
@@ -84,26 +115,56 @@ def add_noise(input_file, output_file, noise_level=0.1, use_sox=False, noise_typ
 
     else:
         try:
-            # Load audio file using librosa
             y, sr = librosa.load(input_file, sr=None)
-            
-            # Generate white noise with the same shape as the signal
             noise = np.random.normal(0, y.std() * noise_level, y.shape)
-            
-            # Add noise to the signal
-            y_noisy = y + noise
-            
-            # Ensure the output stays in the [-1, 1] range
-            y_noisy = np.clip(y_noisy, -1.0, 1.0)
-            
-            # Write the noisy audio to file
+            y_noisy = np.clip(y + noise, -1.0, 1.0)
             sf.write(output_file, y_noisy, sr)
-        
             return output_file
-            
         except Exception as e:
             print(f"Error adding noise with librosa: {e}")
             return None
+        
+
+def get_sample_rate(path):
+    try:
+        result = subprocess.run(["soxi", "-r", path], capture_output=True, text=True)
+        return int(result.stdout.strip())
+    except:
+        return 44100  # fallback
+        
+        
+def build_sox_effects_chain(
+    duration,
+    noise_type="whitenoise",
+    noise_level=0.1,
+    reverb=False,
+    eq=False,
+    speed=None,
+    pitch=None, 
+    sample_rate=44100
+):
+    effects = [f'rate {sample_rate}']
+    effects.append(f'rate {sample_rate}')
+    if noise_level > 0:
+        effects.append(f'synth {duration} {noise_type} vol {noise_level}')
+
+    if reverb:
+        effects.append("reverb")
+
+    if eq:
+        effects.append("equalizer 1000 1q -10")
+        effects.append("equalizer 8000 1q +6")
+
+    if speed:
+        effects.append(f"speed {speed}")
+
+    if pitch:
+        effects.append(f"pitch {pitch}")
+
+    return " ".join(effects)
+
+
+
 
 def convert_to_mono_wav(input_file, output_file=None):
     """
