@@ -54,14 +54,22 @@ def setup_test_environment(
         "noisy_segments": {},
         "freq_files": [],
         "database_files": [],
+        "genres": {},  # Track genres for music files
     }
 
     # Find music files
     music_files = []
-    for filename in os.listdir(music_dir):
-        if filename.lower().endswith((".mp3", ".wav", ".flac", ".ogg")):
-            music_files.append(os.path.join(music_dir, filename))
-            test_files["music_files"].append(filename)
+    for root, dirs, files in os.walk(music_dir):
+        for filename in files:
+            if filename.lower().endswith((".mp3", ".wav", ".flac", ".ogg")):
+                full_path = os.path.join(root, filename)
+                music_files.append(full_path)
+
+                # Extract genre from directory structure
+                genre = os.path.basename(os.path.dirname(full_path))
+                base_name = os.path.splitext(filename)[0]
+                test_files["music_files"].append(filename)
+                test_files["genres"][base_name] = genre
 
     if not music_files:
         print(f"No music files found in {music_dir}")
@@ -206,6 +214,7 @@ def initialize_results_file(output_file, parameters):
             "by_compressor": {},
             "by_variant": {},
             "by_duration": {},
+            "by_genre": {},  # Add genre summary
             "compression_errors": {},
             "byNF": {},
             "byWS": {},
@@ -247,19 +256,23 @@ def update_results_file(output_file, results):
         json.dump(results, f)
 
 
-def run_tests(compressors=None, output_file=None):
+def run_tests(compressors=None, output_file=None, genres_map=None):
     """
     Run tests on all frequency files in the test directory.
 
     Args:
         compressors: List of compressors to use (default: gzip, bzip2, xz, zstd)
         output_file: Path to the output JSON file for incremental writing
+        genres_map: Dictionary mapping music names to their genres
 
     Returns:
         Dictionary with detailed test results
     """
     if compressors is None:
         compressors = ["gzip", "bzip2", "lzma", "zstd"]
+
+    if genres_map is None:
+        genres_map = {}
 
     # Find test frequency files
     test_files = [
@@ -284,6 +297,7 @@ def run_tests(compressors=None, output_file=None):
                 "by_compressor": {},
                 "by_variant": {},
                 "by_duration": {},
+                "by_genre": {},  # Add genre summary
                 "compression_errors": {},
                 "byNF": {},
                 "byWS": {},
@@ -321,6 +335,17 @@ def run_tests(compressors=None, output_file=None):
         # Extract metadata from filename
         test_file_components = filename.split("_")
         music_name = test_file_components[0]
+
+        # Get genre for this music file
+        genre = genres_map.get(music_name, "unknown")
+
+        # Initialize genre in summary if not already there
+        if genre not in results["summary"]["by_genre"]:
+            results["summary"]["by_genre"][genre] = {
+                "total": 0,
+                "correct": 0,
+                "errors": 0,
+            }
 
         # Detect NF and WS from filename
         nf_value = None
@@ -376,6 +401,7 @@ def run_tests(compressors=None, output_file=None):
             test_result = {
                 "file": filename,
                 "actual_name": music_name,
+                "genre": genre,  # Add genre to test result
                 "compressor": compressor,
                 "variant": variant,
                 "duration": duration,
@@ -418,6 +444,9 @@ def run_tests(compressors=None, output_file=None):
                 results["summary"]["by_compressor"][compressor]["total"] += 1
                 results["summary"]["by_variant"][variant]["total"] += 1
                 results["summary"]["by_duration"][str(duration)]["total"] += 1
+                results["summary"]["by_genre"][genre][
+                    "total"
+                ] += 1  # Update genre counter
 
                 # Atualizar byNF/byWS
                 if nf_value is not None and str(nf_value) in results["summary"]["byNF"]:
@@ -430,6 +459,9 @@ def run_tests(compressors=None, output_file=None):
                     results["summary"]["by_compressor"][compressor]["correct"] += 1
                     results["summary"]["by_variant"][variant]["correct"] += 1
                     results["summary"]["by_duration"][str(duration)]["correct"] += 1
+                    results["summary"]["by_genre"][genre][
+                        "correct"
+                    ] += 1  # Update genre counter
                     if (
                         nf_value is not None
                         and str(nf_value) in results["summary"]["byNF"]
@@ -458,6 +490,9 @@ def run_tests(compressors=None, output_file=None):
                 results["summary"]["by_compressor"][compressor]["errors"] += 1
                 results["summary"]["by_variant"][variant]["errors"] += 1
                 results["summary"]["by_duration"][str(duration)]["errors"] += 1
+                results["summary"]["by_genre"][genre][
+                    "errors"
+                ] += 1  # Update genre error counter
                 if nf_value is not None and str(nf_value) in results["summary"]["byNF"]:
                     results["summary"]["byNF"][str(nf_value)]["errors"] += 1
                 if ws_value is not None and str(ws_value) in results["summary"]["byWS"]:
@@ -500,6 +535,14 @@ def run_tests(compressors=None, output_file=None):
             )
         else:
             duration_data["accuracy"] = 0
+
+    # Calculate accuracy for genre statistics
+    for genre in results["summary"]["by_genre"]:
+        genre_data = results["summary"]["by_genre"][genre]
+        if genre_data["total"] > 0:
+            genre_data["accuracy"] = genre_data["correct"] / genre_data["total"]
+        else:
+            genre_data["accuracy"] = 0
 
     # Calcular accuracy para byNF e byWS
     for nf in results["summary"]["byNF"]:
@@ -605,6 +648,8 @@ def main():
     # Initialize results file
     initialize_results_file(output_file, test_parameters)
 
+    genres_map = {}  # To store mapping of music names to genres
+
     if not args.skip_setup:
         test_files = setup_test_environment(
             args.music_dir,
@@ -619,6 +664,9 @@ def main():
             pitch=args.pitch,
         )
 
+        # Store the genres mapping for use in run_tests
+        genres_map = test_files.get("genres", {})
+
         print(f"\nSetup complete:")
         print(f"- {len(test_files['music_files'])} music files processed")
         print(f"- {len(test_files['segments'])} segments extracted")
@@ -627,9 +675,19 @@ def main():
         )
         print(f"- {len(test_files['freq_files'])} frequency files generated")
         print(f"- {len(test_files['database_files'])} database files created")
+    else:
+        # If skipping setup, try to extract genre information from the directory structure
+        music_dir = args.music_dir
+        for genre_dir in os.listdir(music_dir):
+            genre_path = os.path.join(music_dir, genre_dir)
+            if os.path.isdir(genre_path):
+                for filename in os.listdir(genre_path):
+                    if filename.lower().endswith((".mp3", ".wav", ".flac", ".ogg")):
+                        base_name = os.path.splitext(filename)[0]
+                        genres_map[base_name] = genre_dir
 
     # Run the tests and get detailed results - pass the output file for incremental writing
-    detailed_results = run_tests(args.compressors, output_file)
+    detailed_results = run_tests(args.compressors, output_file, genres_map)
 
     # Evaluate performance for each compressor (original functionality)
     print("\n--- Evaluating compressor performance ---")
@@ -664,6 +722,15 @@ def main():
         ].items():
             if count > 0:
                 print(f"  {compressor}: {count} errors")
+
+    # Print genre summary
+    if "by_genre" in current_results["summary"]:
+        print("\nGenre Summary:")
+        for genre, data in current_results["summary"]["by_genre"].items():
+            if data["total"] > 0:
+                print(
+                    f"  {genre}: {data['correct']}/{data['total']} correct ({data['accuracy']:.2%} accuracy)"
+                )
 
     # Final update to the results file
     with open(output_file, "w") as f:
