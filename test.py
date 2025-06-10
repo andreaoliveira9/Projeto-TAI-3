@@ -191,18 +191,18 @@ def setup_test_environment(
                 convert_to_frequencies(eq_file, freq_file)
                 test_files["freq_files"].append(freq_file)
 
-            if speed is not None:
+            for speed_val in speed:
                 # Speed variant (clean, no noise)
-                suffix = f"speed_{speed}"
+                suffix = f"speed_{speed_val}"
                 speed_file = os.path.join(
                     "segments", f"{base_name}_segment_{i}_{suffix}.wav"
                 )
-                print(f"  Adding speed change {speed} to segment {i} (no noise)...")
+                print(f"  Adding speed change {speed_val} to segment {i} (no noise)...")
                 add_noise(
                     segment_file,
                     speed_file,
                     noise_level=0,
-                    speed=speed,
+                    speed=speed_val,
                     use_sox=use_sox,
                 )
 
@@ -813,7 +813,11 @@ def main():
     parser.add_argument("--reverb", action="store_true", help="Apply reverb in SoX")
     parser.add_argument("--eq", action="store_true", help="Apply EQ filter in SoX")
     parser.add_argument(
-        "--speed", type=float, help="Speed factor (e.g., 1.1 for 10%% faster)"
+        "--speed",
+        type=float,
+        nargs="+",
+        default=[],
+        help="Speed change factors (e.g., 0.9 for 10% slower, 1.1 for 10% faster, default: no speed change)",
     )
     parser.add_argument(
         "--pitch",
