@@ -285,48 +285,64 @@ def run_tests(compressors=None):
                 "compressor": compressor,
                 "variant": variant,
                 "duration": duration,
-                "top_matches": [],
-                "correct": False,
+                "default": None,
+                "nf_results": {},
+                "ws_results": {},
                 "error": None,
             }
 
             try:
+                # Default
                 ncd_results = calculate_ncd_with_database(test_file, compressor)
-
-                # Get top matches
                 top_matches = identify_music(ncd_results, 3)
-
-                print(f"Top 3 matches:")
-                for i, (name, distance) in enumerate(top_matches, 1):
-                    print(f"  {i}. {name} - NCD: {distance:.4f}")
-
-                # Update test result
-                test_result["top_matches"] = [
-                    {"name": name, "distance": distance}
-                    for name, distance in top_matches
-                ]
-
-                # Check if correct
                 actual_name = music_name
                 predicted_name = top_matches[0][0] if top_matches else None
                 is_correct = actual_name == predicted_name
-                test_result["correct"] = is_correct
+                test_result["default"] = {
+                    "top_matches": [
+                        {"name": name, "distance": distance}
+                        for name, distance in top_matches
+                    ],
+                    "correct": is_correct,
+                }
 
-                if is_correct:
-                    print(f"✓ Correct identification!")
-                else:
-                    print(
-                        f"✗ Incorrect identification. Expected: {actual_name}, Got: {predicted_name}"
+                # NF sweep
+                for nf in NF_VALUES:
+                    ncd_results_nf = calculate_ncd_with_database(
+                        test_file, compressor, num_freqs=nf, frame_length=DEFAULT_WS
                     )
+                    top_matches_nf = identify_music(ncd_results_nf, 3)
+                    predicted_name_nf = top_matches_nf[0][0] if top_matches_nf else None
+                    is_correct_nf = actual_name == predicted_name_nf
+                    test_result["nf_results"][str(nf)] = {
+                        "top_matches": [
+                            {"name": name, "distance": distance}
+                            for name, distance in top_matches_nf
+                        ],
+                        "correct": is_correct_nf,
+                    }
 
-                # Update summary counters
+                # WS sweep
+                for ws in WS_VALUES:
+                    ncd_results_ws = calculate_ncd_with_database(
+                        test_file, compressor, num_freqs=DEFAULT_NF, frame_length=ws
+                    )
+                    top_matches_ws = identify_music(ncd_results_ws, 3)
+                    predicted_name_ws = top_matches_ws[0][0] if top_matches_ws else None
+                    is_correct_ws = actual_name == predicted_name_ws
+                    test_result["ws_results"][str(ws)] = {
+                        "top_matches": [
+                            {"name": name, "distance": distance}
+                            for name, distance in top_matches_ws
+                        ],
+                        "correct": is_correct_ws,
+                    }
+
+                # Update summary counters for default only
                 results["summary"]["total_tests"] += 1
                 results["summary"]["by_compressor"][compressor]["total"] += 1
-
                 results["summary"]["by_variant"][variant]["total"] += 1
-
                 results["summary"]["by_duration"][str(duration)]["total"] += 1
-
                 if is_correct:
                     results["summary"]["correct_identifications"] += 1
                     results["summary"]["by_compressor"][compressor]["correct"] += 1
