@@ -11,10 +11,8 @@ from feature_extraction import convert_to_frequencies
 from ncd import calculate_ncd_with_database
 from music_identification import identify_music, evaluate_compressor_performance
 
-NF_VALUES = [3, 10, 20, 40]
-WS_VALUES = [2048, 4096, 8192, 16384]
-DEFAULT_NF = 20
-DEFAULT_WS = 8192
+NF_VALUES = [3, 4, 10, 20, 40]
+WS_VALUES = [1024, 2048, 4096, 8192, 16384]
 
 
 def setup_test_environment(
