@@ -7,10 +7,11 @@ import librosa
 import soundfile as sf
 import subprocess
 
+
 def extract_random_segment(input_file, output_file, duration=10.0):
     """
     Extract a random segment of specified duration from an audio file
-    
+
     Args:
         input_file (str): Path to input audio file
         output_file (str): Path to output segment file
@@ -19,11 +20,11 @@ def extract_random_segment(input_file, output_file, duration=10.0):
     try:
         # Load the audio file
         audio = AudioSegment.from_file(input_file)
-        
+
         # Calculate total duration in milliseconds
         total_duration_ms = len(audio)
         segment_duration_ms = int(duration * 1000)
-        
+
         # Make sure we can extract a full segment
         if total_duration_ms <= segment_duration_ms:
             print(f"Warning: Audio is shorter than {duration}s. Using whole file.")
@@ -32,28 +33,37 @@ def extract_random_segment(input_file, output_file, duration=10.0):
             # Choose a random start position
             max_start_pos = total_duration_ms - segment_duration_ms
             start_pos = random.randint(0, max_start_pos)
-            
+
             # Extract the segment
-            segment = audio[start_pos:start_pos + segment_duration_ms]
-        
+            segment = audio[start_pos : start_pos + segment_duration_ms]
+
         # Ensure the directory exists
         os.makedirs(os.path.dirname(output_file), exist_ok=True)
-        
+
         # Export the segment
         segment.export(output_file, format="wav")
-        
+
         return output_file
-        
+
     except Exception as e:
         print(f"Error extracting segment: {e}")
         return None
 
 
-def add_noise(input_file, output_file, noise_level=0.1, use_sox=False, noise_type="whitenoise",
-              add_reverb=False, apply_eq=False, speed=None, pitch=None):    
+def add_noise(
+    input_file,
+    output_file,
+    noise_level=0.1,
+    use_sox=False,
+    noise_type="whitenoise",
+    add_reverb=False,
+    apply_eq=False,
+    speed=None,
+    pitch=None,
+):
     """
     Add white or pink noise to an audio file using either librosa+numpy or SoX.
-    
+
     Args:
         input_file (str): Path to input audio file
         output_file (str): Path to output noisy audio file
@@ -66,7 +76,9 @@ def add_noise(input_file, output_file, noise_level=0.1, use_sox=False, noise_typ
     if use_sox:
         try:
             # Get duration of input audio
-            result = subprocess.run(["soxi", "-D", input_file], capture_output=True, text=True)
+            result = subprocess.run(
+                ["soxi", "-D", input_file], capture_output=True, text=True
+            )
             duration = float(result.stdout.strip())
 
             sample_rate = get_sample_rate(input_file)
@@ -78,13 +90,12 @@ def add_noise(input_file, output_file, noise_level=0.1, use_sox=False, noise_typ
                     duration=duration,
                     noise_type=noise_type,
                     noise_level=0,
-                    reverb=add_reverb,
-                    eq=apply_eq,
+                    add_reverb=add_reverb,
+                    apply_eq=apply_eq,
                     speed=speed,
                     pitch=pitch,
-                    sample_rate=sample_rate
+                    sample_rate=sample_rate,
                 )
-
 
                 sox_command = f'sox "{input_file}" "{output_file}" {effects_chain}'
                 print("SOX CMD:", sox_command)
@@ -94,11 +105,11 @@ def add_noise(input_file, output_file, noise_level=0.1, use_sox=False, noise_typ
                     duration=duration,
                     noise_type=noise_type,
                     noise_level=noise_level,
-                    reverb=add_reverb,
-                    eq=apply_eq,
+                    add_reverb=add_reverb,
+                    apply_eq=apply_eq,
                     speed=speed,
                     pitch=pitch,
-                    sample_rate=sample_rate
+                    sample_rate=sample_rate,
                 )
                 sox_command = (
                     f'sox "{input_file}" -p | '
@@ -123,7 +134,7 @@ def add_noise(input_file, output_file, noise_level=0.1, use_sox=False, noise_typ
         except Exception as e:
             print(f"Error adding noise with librosa: {e}")
             return None
-        
+
 
 def get_sample_rate(path):
     try:
@@ -131,27 +142,27 @@ def get_sample_rate(path):
         return int(result.stdout.strip())
     except:
         return 44100  # fallback
-        
-        
+
+
 def build_sox_effects_chain(
     duration,
     noise_type="whitenoise",
     noise_level=0.1,
-    reverb=False,
-    eq=False,
+    add_reverb=False,
+    apply_eq=False,
     speed=None,
-    pitch=None, 
-    sample_rate=44100
+    pitch=None,
+    sample_rate=44100,
 ):
-    effects = [f'rate {sample_rate}']
-    effects.append(f'rate {sample_rate}')
+    effects = [f"rate {sample_rate}"]
+    effects.append(f"rate {sample_rate}")
     if noise_level > 0:
-        effects.append(f'synth {duration} {noise_type} vol {noise_level}')
+        effects.append(f"synth {duration} {noise_type} vol {noise_level}")
 
-    if reverb:
+    if add_reverb:
         effects.append("reverb")
 
-    if eq:
+    if apply_eq:
         effects.append("equalizer 1000 1q -10")
         effects.append("equalizer 8000 1q +6")
 
@@ -164,37 +175,35 @@ def build_sox_effects_chain(
     return " ".join(effects)
 
 
-
-
 def convert_to_mono_wav(input_file, output_file=None):
     """
     Convert any audio file to mono WAV format at 44100Hz
-    
+
     Args:
         input_file (str): Path to input audio file
         output_file (str, optional): Path to output WAV file. If None, uses input name with .wav extension
-        
+
     Returns:
         str: Path to the converted file
     """
     if output_file is None:
         output_file = os.path.splitext(input_file)[0] + ".wav"
-        
+
     try:
         # Load the audio file
         audio = AudioSegment.from_file(input_file)
-        
+
         # Convert to mono
         audio = audio.set_channels(1)
-        
+
         # Convert to 44100Hz
         audio = audio.set_frame_rate(44100)
-        
+
         # Export as WAV
         audio.export(output_file, format="wav")
-        
+
         return output_file
-        
+
     except Exception as e:
         print(f"Error converting audio: {e}")
-        return None 
+        return None

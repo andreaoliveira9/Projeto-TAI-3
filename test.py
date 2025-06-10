@@ -116,20 +116,71 @@ def setup_test_environment(
                 test_files["freq_files"].append(freq_file)
 
             # Pitch-only variant (clean, no noise)
-            suffix = "pitch_only"
-            pitch_file = os.path.join(
-                "segments", f"{base_name}_segment_{i}_{suffix}.wav"
-            )
-            print(f"  Adding pitch shift to segment {i} (no noise)...")
-            add_noise(
-                segment_file, pitch_file, noise_level=0, pitch=-100, use_sox=use_sox
-            )
+            for pitch_shift in pitch:
+                suffix = f"pitch_{pitch_shift}"
+                pitch_file = os.path.join(
+                    "segments", f"{base_name}_segment_{i}_{suffix}.wav"
+                )
+                print(
+                    f"  Adding pitch shift {pitch_shift} to segment {i} (no noise)..."
+                )
+                add_noise(
+                    segment_file,
+                    pitch_file,
+                    noise_level=0,
+                    pitch=pitch_shift,
+                    use_sox=use_sox,
+                )
 
-            test_files["noisy_segments"].setdefault(suffix, []).append(pitch_file)
+                test_files["noisy_segments"].setdefault(suffix, []).append(pitch_file)
 
-            freq_file = os.path.join("test", f"{base_name}_segment_{i}_{suffix}.freq")
-            convert_to_frequencies(pitch_file, freq_file)
-            test_files["freq_files"].append(freq_file)
+                freq_file = os.path.join(
+                    "test", f"{base_name}_segment_{i}_{suffix}.freq"
+                )
+                convert_to_frequencies(pitch_file, freq_file)
+                test_files["freq_files"].append(freq_file)
+
+            if add_reverb:
+                # Reverb variant (clean, no noise)
+                suffix = "reverb"
+                reverb_file = os.path.join(
+                    "segments", f"{base_name}_segment_{i}_{suffix}.wav"
+                )
+                print(f"  Adding reverb to segment {i} (no noise)...")
+                add_noise(
+                    segment_file,
+                    reverb_file,
+                    noise_level=0,
+                    add_reverb=True,
+                    use_sox=use_sox,
+                )
+
+                test_files["noisy_segments"].setdefault(suffix, []).append(reverb_file)
+
+                freq_file = os.path.join(
+                    "test", f"{base_name}_segment_{i}_{suffix}.freq"
+                )
+                convert_to_frequencies(reverb_file, freq_file)
+                test_files["freq_files"].append(freq_file)
+
+            if apply_eq:
+                # EQ variant (clean, no noise)
+                suffix = "eq"
+                eq_file = os.path.join(
+                    "segments", f"{base_name}_segment_{i}_{suffix}.wav"
+                )
+                print(f"  Adding EQ to segment {i} (no noise)...")
+                add_noise(
+                    segment_file, eq_file, noise_level=0, apply_eq=True, use_sox=use_sox
+                )
+
+                test_files["noisy_segments"].setdefault(suffix, []).append(eq_file)
+
+                freq_file = os.path.join(
+                    "test", f"{base_name}_segment_{i}_{suffix}.freq"
+                )
+                convert_to_frequencies(eq_file, freq_file)
+                test_files["freq_files"].append(freq_file)
 
             # Speed-only variant (clean, no noise)
             suffix = "speed_only"
@@ -215,6 +266,14 @@ def initialize_results_file(output_file, parameters):
             "by_variant": {},
             "by_duration": {},
             "by_genre": {},  # Add genre summary
+            "by_modification_type": {
+                "noise": {},
+                "pitch": {},
+                "speed": {},
+                "reverb": {},
+                "eq": {},
+                "clean": {"total": 0, "correct": 0, "errors": 0},
+            },
             "compression_errors": {},
             "byNF": {},
             "byWS": {},
@@ -298,6 +357,14 @@ def run_tests(compressors=None, output_file=None, genres_map=None):
                 "by_variant": {},
                 "by_duration": {},
                 "by_genre": {},  # Add genre summary
+                "by_modification_type": {
+                    "noise": {},
+                    "pitch": {},
+                    "speed": {},
+                    "reverb": {},
+                    "eq": {},
+                    "clean": {"total": 0, "correct": 0, "errors": 0},
+                },
                 "compression_errors": {},
                 "byNF": {},
                 "byWS": {},
@@ -361,8 +428,10 @@ def run_tests(compressors=None, output_file=None, genres_map=None):
             except Exception:
                 ws_value = None
 
-        # Determine if this is a noisy segment
+        # Determine if this is a modified segment and what kind of modification
         variant = "clean"
+        modification_type = "clean"
+        modification_value = None
         duration = 10.0  # Default
 
         for comp in test_file_components:
@@ -371,13 +440,64 @@ def run_tests(compressors=None, output_file=None, genres_map=None):
                     segment_idx = int(comp.split("_")[-1].replace(".freq", ""))
                 except (ValueError, IndexError):
                     segment_idx = 0
-            if "noise" in filename or "pitch" in filename or "speed" in filename:
+
+            # Check for different types of modifications
+            if (
+                "noise" in filename
+                or "pitch" in filename
+                or "speed" in filename
+                or "reverb" in filename
+                or "eq" in filename
+            ):
                 variant = filename.replace(".freq", "").split("segment_")[-1]
+
+                # Determine the modification type and value
+                if "noise" in variant:
+                    modification_type = "noise"
+                    try:
+                        # Extract noise level if present (e.g., noise_0.4)
+                        if "_noise_" in filename:
+                            noise_val = variant.split("_noise_")[1].split("_")[0]
+                            modification_value = float(noise_val)
+                    except (ValueError, IndexError):
+                        modification_value = None
+                elif "pitch" in variant:
+                    modification_type = "pitch"
+                    try:
+                        # Extract pitch value if present (e.g., pitch_-100)
+                        if "pitch_" in variant:
+                            pitch_val = variant.split("pitch_")[1].split("_")[0]
+                            modification_value = float(pitch_val)
+                    except (ValueError, IndexError):
+                        modification_value = None
+                elif "speed" in variant:
+                    modification_type = "speed"
+                elif "reverb" in variant:
+                    modification_type = "reverb"
+                elif "eq" in variant:
+                    modification_type = "eq"
             elif comp.endswith("s.freq"):
                 try:
                     duration = float(comp.replace("s.freq", ""))
                 except (ValueError, IndexError):
                     pass
+
+        # Initialize the modification type counter if needed
+        if modification_type != "clean":
+            mod_value_key = (
+                str(modification_value) if modification_value is not None else "default"
+            )
+            if (
+                mod_value_key
+                not in results["summary"]["by_modification_type"][modification_type]
+            ):
+                results["summary"]["by_modification_type"][modification_type][
+                    mod_value_key
+                ] = {
+                    "total": 0,
+                    "correct": 0,
+                    "errors": 0,
+                }
 
         if variant not in results["summary"]["by_variant"]:
             results["summary"]["by_variant"][variant] = {
@@ -401,9 +521,11 @@ def run_tests(compressors=None, output_file=None, genres_map=None):
             test_result = {
                 "file": filename,
                 "actual_name": music_name,
-                "genre": genre,  # Add genre to test result
+                "genre": genre,
                 "compressor": compressor,
                 "variant": variant,
+                "modification_type": modification_type,
+                "modification_value": modification_value,
                 "duration": duration,
                 "top_matches": [],
                 "correct": False,
@@ -444,9 +566,20 @@ def run_tests(compressors=None, output_file=None, genres_map=None):
                 results["summary"]["by_compressor"][compressor]["total"] += 1
                 results["summary"]["by_variant"][variant]["total"] += 1
                 results["summary"]["by_duration"][str(duration)]["total"] += 1
-                results["summary"]["by_genre"][genre][
-                    "total"
-                ] += 1  # Update genre counter
+                results["summary"]["by_genre"][genre]["total"] += 1
+
+                # Update modification type counter
+                if modification_type == "clean":
+                    results["summary"]["by_modification_type"]["clean"]["total"] += 1
+                else:
+                    mod_value_key = (
+                        str(modification_value)
+                        if modification_value is not None
+                        else "default"
+                    )
+                    results["summary"]["by_modification_type"][modification_type][
+                        mod_value_key
+                    ]["total"] += 1
 
                 # Atualizar byNF/byWS
                 if nf_value is not None and str(nf_value) in results["summary"]["byNF"]:
@@ -459,9 +592,23 @@ def run_tests(compressors=None, output_file=None, genres_map=None):
                     results["summary"]["by_compressor"][compressor]["correct"] += 1
                     results["summary"]["by_variant"][variant]["correct"] += 1
                     results["summary"]["by_duration"][str(duration)]["correct"] += 1
-                    results["summary"]["by_genre"][genre][
-                        "correct"
-                    ] += 1  # Update genre counter
+                    results["summary"]["by_genre"][genre]["correct"] += 1
+
+                    # Update modification type counter for correct identifications
+                    if modification_type == "clean":
+                        results["summary"]["by_modification_type"]["clean"][
+                            "correct"
+                        ] += 1
+                    else:
+                        mod_value_key = (
+                            str(modification_value)
+                            if modification_value is not None
+                            else "default"
+                        )
+                        results["summary"]["by_modification_type"][modification_type][
+                            mod_value_key
+                        ]["correct"] += 1
+
                     if (
                         nf_value is not None
                         and str(nf_value) in results["summary"]["byNF"]
@@ -490,9 +637,21 @@ def run_tests(compressors=None, output_file=None, genres_map=None):
                 results["summary"]["by_compressor"][compressor]["errors"] += 1
                 results["summary"]["by_variant"][variant]["errors"] += 1
                 results["summary"]["by_duration"][str(duration)]["errors"] += 1
-                results["summary"]["by_genre"][genre][
-                    "errors"
-                ] += 1  # Update genre error counter
+                results["summary"]["by_genre"][genre]["errors"] += 1
+
+                # Update modification type error counter
+                if modification_type == "clean":
+                    results["summary"]["by_modification_type"]["clean"]["errors"] += 1
+                else:
+                    mod_value_key = (
+                        str(modification_value)
+                        if modification_value is not None
+                        else "default"
+                    )
+                    results["summary"]["by_modification_type"][modification_type][
+                        mod_value_key
+                    ]["errors"] += 1
+
                 if nf_value is not None and str(nf_value) in results["summary"]["byNF"]:
                     results["summary"]["byNF"][str(nf_value)]["errors"] += 1
                 if ws_value is not None and str(ws_value) in results["summary"]["byWS"]:
@@ -543,6 +702,20 @@ def run_tests(compressors=None, output_file=None, genres_map=None):
             genre_data["accuracy"] = genre_data["correct"] / genre_data["total"]
         else:
             genre_data["accuracy"] = 0
+
+    # Calculate accuracy for modification type statistics
+    for mod_type, values in results["summary"]["by_modification_type"].items():
+        if mod_type == "clean":
+            if values["total"] > 0:
+                values["accuracy"] = values["correct"] / values["total"]
+            else:
+                values["accuracy"] = 0
+        else:
+            for mod_value, data in values.items():
+                if data["total"] > 0:
+                    data["accuracy"] = data["correct"] / data["total"]
+                else:
+                    data["accuracy"] = 0
 
     # Calcular accuracy para byNF e byWS
     for nf in results["summary"]["byNF"]:
@@ -620,7 +793,11 @@ def main():
         "--speed", type=float, help="Speed factor (e.g., 1.1 for 10%% faster)"
     )
     parser.add_argument(
-        "--pitch", type=int, help="Pitch shift in cents (e.g., -200 to lower pitch)"
+        "--pitch",
+        type=float,
+        nargs="+",
+        default=[-100],
+        help="Pitch shift in cents (e.g., -100 for 1 semitone down, default: -100)",
     )
 
     args = parser.parse_args()
