@@ -97,23 +97,32 @@ def setup_test_environment(
             test_files["segments"].append(segment_file)
 
             # Noise-only variants
-            for noise_level in [0.1, 0.4, 0.8]:
-                suffix = f"noise_{noise_level}"
-                noisy_file = os.path.join(
-                    "segments", f"{base_name}_segment_{i}_{suffix}.wav"
-                )
-                print(f"  Adding noise level {noise_level} to segment {i}...")
-                add_noise(
-                    segment_file, noisy_file, noise_level=noise_level, use_sox=use_sox
-                )
+            for noise_level in noise_levels:
+                for noise_type in noise_types:
+                    suffix = f"{noise_type}_{noise_level}"
+                    noisy_file = os.path.join(
+                        "segments", f"{base_name}_segment_{i}_{suffix}.wav"
+                    )
+                    print(
+                        f"  Adding {noise_type} noise level {noise_level} to segment {i}..."
+                    )
+                    add_noise(
+                        segment_file,
+                        noisy_file,
+                        noise_level=noise_level,
+                        noise_type=noise_type,
+                        use_sox=use_sox,
+                    )
 
-                test_files["noisy_segments"].setdefault(suffix, []).append(noisy_file)
+                    test_files["noisy_segments"].setdefault(suffix, []).append(
+                        noisy_file
+                    )
 
-                freq_file = os.path.join(
-                    "test", f"{base_name}_segment_{i}_{suffix}.freq"
-                )
-                convert_to_frequencies(noisy_file, freq_file)
-                test_files["freq_files"].append(freq_file)
+                    freq_file = os.path.join(
+                        "test", f"{base_name}_segment_{i}_{suffix}.freq"
+                    )
+                    convert_to_frequencies(noisy_file, freq_file)
+                    test_files["freq_files"].append(freq_file)
 
             # Pitch-only variant (clean, no noise)
             for pitch_shift in pitch:
