@@ -689,53 +689,6 @@ def main():
     # Run the tests and get detailed results - pass the output file for incremental writing
     detailed_results = run_tests(args.compressors, output_file, genres_map)
 
-    # Evaluate performance for each compressor (original functionality)
-    print("\n--- Evaluating compressor performance ---")
-    evaluation_results = evaluate_compressor_performance("test", args.compressors)
-
-    # Load the current results to update with evaluation results
-    with open(output_file, "r") as f:
-        current_results = json.load(f)
-
-    # Add evaluation results to the detailed results
-    current_results["evaluation"] = {}
-    for compressor in args.compressors:
-        current_results["evaluation"][compressor] = {
-            "correct": evaluation_results[compressor]["correct"],
-            "total": evaluation_results[compressor]["total"],
-            "accuracy": evaluation_results[compressor]["accuracy"],
-        }
-
-    # Print summary (original functionality)
-    print("\nSummary:")
-    for compressor in args.compressors:
-        correct = evaluation_results[compressor]["correct"]
-        total = evaluation_results[compressor]["total"]
-        accuracy = evaluation_results[compressor]["accuracy"]
-        print(f"{compressor}: {correct}/{total} correct ({accuracy:.2%} accuracy)")
-
-    # Print error summary if any errors occurred
-    if "compression_errors" in current_results["summary"]:
-        print("\nCompression Error Summary:")
-        for compressor, count in current_results["summary"][
-            "compression_errors"
-        ].items():
-            if count > 0:
-                print(f"  {compressor}: {count} errors")
-
-    # Print genre summary
-    if "by_genre" in current_results["summary"]:
-        print("\nGenre Summary:")
-        for genre, data in current_results["summary"]["by_genre"].items():
-            if data["total"] > 0:
-                print(
-                    f"  {genre}: {data['correct']}/{data['total']} correct ({data['accuracy']:.2%} accuracy)"
-                )
-
-    # Final update to the results file
-    with open(output_file, "w") as f:
-        json.dump(current_results, f, indent=2)
-
     print(f"\nDetailed results saved to {output_file}")
 
 
