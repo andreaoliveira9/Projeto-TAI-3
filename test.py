@@ -11,7 +11,9 @@ from feature_extraction import convert_to_frequencies
 from ncd import calculate_ncd_with_database
 from music_identification import identify_music, evaluate_compressor_performance
 
-def setup_test_environment(music_dir, num_segments=3, duration=10, noise_levels=[0.0, 0.1, 0.2]):
+def setup_test_environment(music_dir, num_segments=3, duration=10, noise_levels=[0.1, 0.4, 0.8],
+                           noise_types=["whitenoise"], use_sox=False,
+                           add_reverb=False, apply_eq=False, speed=None, pitch=None):
     """
     Create a complete test environment:
     1. Create segments from music files
@@ -73,34 +75,60 @@ def setup_test_environment(music_dir, num_segments=3, duration=10, noise_levels=
             extract_random_segment(music_file, segment_file, duration)
             test_files["segments"].append(segment_file)
             
-            # Create noisy versions
-            for noise_level in noise_levels:
-                if noise_level == 0.0:
-                    continue  # Skip 0.0 noise level - already have clean segment
-                    
-                noisy_file = os.path.join("segments", f"{base_name}_segment_{i}_noise_{noise_level}.wav")
-                print(f"  Adding noise level {noise_level} to segment {i+1}...")
-                add_noise(segment_file, noisy_file, noise_level)
+            # Noise-only variants
+            for noise_level in [0.1, 0.4, 0.8]:
+                suffix = f"noise_{noise_level}"
+                noisy_file = os.path.join("segments", f"{base_name}_segment_{i}_{suffix}.wav")
+                print(f"  Adding noise level {noise_level} to segment {i}...")
+                add_noise(segment_file, noisy_file, noise_level=noise_level, use_sox=use_sox)
                 
-                if noise_level not in test_files["noisy_segments"]:
-                    test_files["noisy_segments"][noise_level] = []
-                test_files["noisy_segments"][noise_level].append(noisy_file)
-                
+                test_files["noisy_segments"].setdefault(suffix, []).append(noisy_file)
+
+                freq_file = os.path.join("test", f"{base_name}_segment_{i}_{suffix}.freq")
+                convert_to_frequencies(noisy_file, freq_file)
+                test_files["freq_files"].append(freq_file)
+
+            # Pitch-only variant (clean, no noise)
+            suffix = "pitch_only"
+            pitch_file = os.path.join("segments", f"{base_name}_segment_{i}_{suffix}.wav")
+            print(f"  Adding pitch shift to segment {i} (no noise)...")
+            add_noise(segment_file, pitch_file, noise_level=0, pitch=-100, use_sox=use_sox)
+
+            test_files["noisy_segments"].setdefault(suffix, []).append(pitch_file)
+
+            freq_file = os.path.join("test", f"{base_name}_segment_{i}_{suffix}.freq")
+            convert_to_frequencies(pitch_file, freq_file)
+            test_files["freq_files"].append(freq_file)
+
+            # Speed-only variant (clean, no noise)
+            suffix = "speed_only"
+            speed_file = os.path.join("segments", f"{base_name}_segment_{i}_{suffix}.wav")
+            print(f"  Adding speed change to segment {i} (no noise)...")
+            add_noise(segment_file, speed_file, noise_level=0, speed=1.1, use_sox=use_sox)
+
+            test_files["noisy_segments"].setdefault(suffix, []).append(speed_file)
+
+            freq_file = os.path.join("test", f"{base_name}_segment_{i}_{suffix}.freq")
+            convert_to_frequencies(speed_file, freq_file)
+            test_files["freq_files"].append(freq_file)
+
+            # Noise + pitch + speed combo
+            suffix = "noise_0.4_pitch_speed"
+            combo_file = os.path.join("segments", f"{base_name}_segment_{i}_{suffix}.wav")
+            print(f"  Adding noise + pitch + speed to segment {i}...")
+            add_noise(segment_file, combo_file, noise_level=0.4, pitch=-100, speed=1.1, use_sox=use_sox)
+
+            test_files["noisy_segments"].setdefault(suffix, []).append(combo_file)
+
+            freq_file = os.path.join("test", f"{base_name}_segment_{i}_{suffix}.freq")
+            convert_to_frequencies(combo_file, freq_file)
+            test_files["freq_files"].append(freq_file)
+
             # Convert segment to frequency representation
             freq_file = os.path.join("test", f"{base_name}_segment_{i}.freq")
             print(f"  Converting segment {i+1} to frequency representation...")
             convert_to_frequencies(segment_file, freq_file)
             test_files["freq_files"].append(freq_file)
-            
-            # Also convert noisy segments
-            for noise_level in noise_levels:
-                if noise_level == 0.0:
-                    continue
-                noisy_file = os.path.join("segments", f"{base_name}_segment_{i}_noise_{noise_level}.wav")
-                noisy_freq_file = os.path.join("test", f"{base_name}_segment_{i}_noise_{noise_level}.freq")
-                print(f"  Converting noisy segment (level {noise_level}) to frequency representation...")
-                convert_to_frequencies(noisy_file, noisy_freq_file)
-                test_files["freq_files"].append(noisy_freq_file)
     
     return test_files
 
@@ -131,7 +159,7 @@ def run_tests(compressors=None):
             "total_tests": 0,
             "correct_identifications": 0,
             "by_compressor": {},
-            "by_noise_level": {},
+            "by_variant": {},
             "by_duration": {},
             "compression_errors": {}
         }
@@ -156,33 +184,26 @@ def run_tests(compressors=None):
         music_name = test_file_components[0]
         
         # Determine if this is a noisy segment
-        noise_level = 0.0
+        variant = "clean"
         duration = 10.0  # Default
         
         for comp in test_file_components:
-            if comp.startswith("noise"):
-                try:
-                    noise_level = float(comp.split("_")[-1].replace(".freq", ""))
-                except (ValueError, IndexError):
-                    pass
-            elif comp.startswith("segment"):
+            if comp.startswith("segment"):
                 try:
                     segment_idx = int(comp.split("_")[-1].replace(".freq", ""))
                 except (ValueError, IndexError):
                     segment_idx = 0
+            if "noise" in filename or "pitch" in filename or "speed" in filename:
+                variant = filename.replace(".freq", "").split("segment_")[-1]
             elif comp.endswith("s.freq"):
                 try:
                     duration = float(comp.replace("s.freq", ""))
                 except (ValueError, IndexError):
                     pass
         
-        # Update noise level counters if needed
-        if noise_level > 0 and str(noise_level) not in results["summary"]["by_noise_level"]:
-            results["summary"]["by_noise_level"][str(noise_level)] = {
-                "total": 0,
-                "correct": 0,
-                "errors": 0
-            }
+
+        if variant not in results["summary"]["by_variant"]:
+            results["summary"]["by_variant"][variant] = {"total": 0, "correct": 0, "errors": 0}
         
         # Update duration counters if needed
         if str(duration) not in results["summary"]["by_duration"]:
@@ -200,7 +221,7 @@ def run_tests(compressors=None):
                 "file": filename,
                 "actual_name": music_name,
                 "compressor": compressor,
-                "noise_level": noise_level,
+                "variant": variant,
                 "duration": duration,
                 "top_matches": [],
                 "correct": False,
@@ -235,18 +256,14 @@ def run_tests(compressors=None):
                 results["summary"]["total_tests"] += 1
                 results["summary"]["by_compressor"][compressor]["total"] += 1
                 
-                if str(noise_level) in results["summary"]["by_noise_level"]:
-                    results["summary"]["by_noise_level"][str(noise_level)]["total"] += 1
+                results["summary"]["by_variant"][variant]["total"] += 1
                 
                 results["summary"]["by_duration"][str(duration)]["total"] += 1
                 
                 if is_correct:
                     results["summary"]["correct_identifications"] += 1
                     results["summary"]["by_compressor"][compressor]["correct"] += 1
-                    
-                    if str(noise_level) in results["summary"]["by_noise_level"]:
-                        results["summary"]["by_noise_level"][str(noise_level)]["correct"] += 1
-                    
+                    results["summary"]["by_variant"][variant]["correct"] += 1 
                     results["summary"]["by_duration"][str(duration)]["correct"] += 1
                 
             except Exception as e:
@@ -264,10 +281,7 @@ def run_tests(compressors=None):
                 # Update error counters
                 results["summary"]["compression_errors"][compressor] += 1
                 results["summary"]["by_compressor"][compressor]["errors"] += 1
-                
-                if str(noise_level) in results["summary"]["by_noise_level"]:
-                    results["summary"]["by_noise_level"][str(noise_level)]["errors"] += 1
-                
+                results["summary"]["by_variant"][variant]["errors"] += 1
                 results["summary"]["by_duration"][str(duration)]["errors"] += 1
             
             # Add test result to collection
@@ -286,12 +300,9 @@ def run_tests(compressors=None):
         else:
             comp_data["accuracy"] = 0
     
-    for noise_level in results["summary"]["by_noise_level"]:
-        noise_data = results["summary"]["by_noise_level"][noise_level]
-        if noise_data["total"] > 0:
-            noise_data["accuracy"] = noise_data["correct"] / noise_data["total"]
-        else:
-            noise_data["accuracy"] = 0
+    for variant in results["summary"]["by_variant"]:
+        var_data = results["summary"]["by_variant"][variant]
+        var_data["accuracy"] = var_data["correct"] / var_data["total"] if var_data["total"] > 0 else 0
     
     for duration in results["summary"]["by_duration"]:
         duration_data = results["summary"]["by_duration"][duration]
@@ -313,6 +324,14 @@ def main():
     parser.add_argument("--compressors", nargs="+", default=["gzip", "bzip2", "lzma", "zstd"], 
                         help="Compressors to test (default: gzip bzip2 xz zstd)")
     parser.add_argument("--output", help="JSON file to save results (default: test_results_TIMESTAMP.json)")
+    parser.add_argument("--sox", action="store_true", help="Use SoX instead of librosa to add noise")
+    parser.add_argument("--noise-types", choices=["whitenoise", "pinknoise"], nargs="+", default=["whitenoise"],
+                        help="Noise types to test (e.g., whitenoise or/and pinknoise)")
+    parser.add_argument("--reverb", action="store_true", help="Apply reverb in SoX")
+    parser.add_argument("--eq", action="store_true", help="Apply EQ filter in SoX")
+    parser.add_argument("--speed", type=float, help="Speed factor (e.g., 1.1 for 10%% faster)")
+    parser.add_argument("--pitch", type=int, help="Pitch shift in cents (e.g., -200 to lower pitch)")
+
     
     args = parser.parse_args()
     
@@ -321,8 +340,15 @@ def main():
             args.music_dir,
             num_segments=args.segments,
             duration=args.duration,
-            noise_levels=args.noise_levels
+            noise_levels=args.noise_levels,
+            use_sox=args.sox,
+            noise_types=args.noise_types,
+            add_reverb=args.reverb,
+            apply_eq=args.eq,
+            speed=args.speed,
+            pitch=args.pitch
         )
+
         
         print(f"\nSetup complete:")
         print(f"- {len(test_files['music_files'])} music files processed")
@@ -366,8 +392,15 @@ def main():
         "duration": args.duration,
         "noise_levels": args.noise_levels,
         "compressors": args.compressors,
+        "sox_used": args.sox,
+        "noise_types": args.noise_types,
+        "reverb": args.reverb,
+        "eq": args.eq,
+        "speed": args.speed,
+        "pitch": args.pitch,
         "timestamp": timestamp
     }
+
     
     # Print error summary if any errors occurred
     if "compression_errors" in detailed_results["summary"]:

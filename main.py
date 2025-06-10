@@ -39,7 +39,7 @@ def main():
     noise_parser = subparsers.add_parser("noise", help="Add noise to audio file")
     noise_parser.add_argument("audio_file", help="Path to the audio file")
     noise_parser.add_argument("-l", "--level", type=float, default=0.1, 
-                            help="Noise level (0.0-1.0)")
+                            help="Noise level (0.0-1.0) (default: 0.1), To use the other effects without any noise please put this to 0.0")
     noise_parser.add_argument("-o", "--output", help="Output filename (default: input_noisy.wav)")
     noise_parser.add_argument("--sox", action="store_true",
                             help="Use SoX instead of librosa to add noise")
