@@ -182,21 +182,28 @@ def setup_test_environment(
                 convert_to_frequencies(eq_file, freq_file)
                 test_files["freq_files"].append(freq_file)
 
-            # Speed-only variant (clean, no noise)
-            suffix = "speed_only"
-            speed_file = os.path.join(
-                "segments", f"{base_name}_segment_{i}_{suffix}.wav"
-            )
-            print(f"  Adding speed change to segment {i} (no noise)...")
-            add_noise(
-                segment_file, speed_file, noise_level=0, speed=1.1, use_sox=use_sox
-            )
+            if speed is not None:
+                # Speed variant (clean, no noise)
+                suffix = f"speed_{speed}"
+                speed_file = os.path.join(
+                    "segments", f"{base_name}_segment_{i}_{suffix}.wav"
+                )
+                print(f"  Adding speed change {speed} to segment {i} (no noise)...")
+                add_noise(
+                    segment_file,
+                    speed_file,
+                    noise_level=0,
+                    speed=speed,
+                    use_sox=use_sox,
+                )
 
-            test_files["noisy_segments"].setdefault(suffix, []).append(speed_file)
+                test_files["noisy_segments"].setdefault(suffix, []).append(speed_file)
 
-            freq_file = os.path.join("test", f"{base_name}_segment_{i}_{suffix}.freq")
-            convert_to_frequencies(speed_file, freq_file)
-            test_files["freq_files"].append(freq_file)
+                freq_file = os.path.join(
+                    "test", f"{base_name}_segment_{i}_{suffix}.freq"
+                )
+                convert_to_frequencies(speed_file, freq_file)
+                test_files["freq_files"].append(freq_file)
 
             # Noise + pitch + speed combo
             suffix = "noise_0.4_pitch_speed"
@@ -472,6 +479,13 @@ def run_tests(compressors=None, output_file=None, genres_map=None):
                         modification_value = None
                 elif "speed" in variant:
                     modification_type = "speed"
+                    try:
+                        # Extract speed value if present (e.g., speed_1.1)
+                        if "speed_" in variant:
+                            speed_val = variant.split("speed_")[1].split("_")[0]
+                            modification_value = float(speed_val)
+                    except (ValueError, IndexError):
+                        modification_value = None
                 elif "reverb" in variant:
                     modification_type = "reverb"
                 elif "eq" in variant:
