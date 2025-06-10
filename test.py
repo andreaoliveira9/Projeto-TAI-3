@@ -221,8 +221,16 @@ def run_tests(compressors=None):
             "by_variant": {},
             "by_duration": {},
             "compression_errors": {},
+            "byNF": {},
+            "byWS": {},
         },
     }
+
+    # Inicializar os summaries de NF e WS
+    for nf in NF_VALUES:
+        results["summary"]["byNF"][str(nf)] = {"total": 0, "correct": 0, "errors": 0}
+    for ws in WS_VALUES:
+        results["summary"]["byWS"][str(ws)] = {"total": 0, "correct": 0, "errors": 0}
 
     # Initialize summary counters
     for compressor in compressors:
@@ -241,6 +249,20 @@ def run_tests(compressors=None):
         # Extract metadata from filename
         test_file_components = filename.split("_")
         music_name = test_file_components[0]
+
+        # Detect NF and WS from filename
+        nf_value = None
+        ws_value = None
+        if "_nf" in filename:
+            try:
+                nf_value = int(filename.split("_nf")[-1].replace(".freq", ""))
+            except Exception:
+                nf_value = None
+        if "_ws" in filename:
+            try:
+                ws_value = int(filename.split("_ws")[-1].replace(".freq", ""))
+            except Exception:
+                ws_value = None
 
         # Determine if this is a noisy segment
         variant = "clean"
@@ -322,16 +344,30 @@ def run_tests(compressors=None):
                 # Update summary counters
                 results["summary"]["total_tests"] += 1
                 results["summary"]["by_compressor"][compressor]["total"] += 1
-
                 results["summary"]["by_variant"][variant]["total"] += 1
-
                 results["summary"]["by_duration"][str(duration)]["total"] += 1
+
+                # Atualizar byNF/byWS
+                if nf_value is not None and str(nf_value) in results["summary"]["byNF"]:
+                    results["summary"]["byNF"][str(nf_value)]["total"] += 1
+                if ws_value is not None and str(ws_value) in results["summary"]["byWS"]:
+                    results["summary"]["byWS"][str(ws_value)]["total"] += 1
 
                 if is_correct:
                     results["summary"]["correct_identifications"] += 1
                     results["summary"]["by_compressor"][compressor]["correct"] += 1
                     results["summary"]["by_variant"][variant]["correct"] += 1
                     results["summary"]["by_duration"][str(duration)]["correct"] += 1
+                    if (
+                        nf_value is not None
+                        and str(nf_value) in results["summary"]["byNF"]
+                    ):
+                        results["summary"]["byNF"][str(nf_value)]["correct"] += 1
+                    if (
+                        ws_value is not None
+                        and str(ws_value) in results["summary"]["byWS"]
+                    ):
+                        results["summary"]["byWS"][str(ws_value)]["correct"] += 1
 
             except Exception as e:
                 # Handle errors during testing
@@ -350,6 +386,10 @@ def run_tests(compressors=None):
                 results["summary"]["by_compressor"][compressor]["errors"] += 1
                 results["summary"]["by_variant"][variant]["errors"] += 1
                 results["summary"]["by_duration"][str(duration)]["errors"] += 1
+                if nf_value is not None and str(nf_value) in results["summary"]["byNF"]:
+                    results["summary"]["byNF"][str(nf_value)]["errors"] += 1
+                if ws_value is not None and str(ws_value) in results["summary"]["byWS"]:
+                    results["summary"]["byWS"][str(ws_value)]["errors"] += 1
 
             # Add test result to collection
             results["tests"].append(test_result)
@@ -384,6 +424,20 @@ def run_tests(compressors=None):
             )
         else:
             duration_data["accuracy"] = 0
+
+    # Calcular accuracy para byNF e byWS
+    for nf in results["summary"]["byNF"]:
+        nf_data = results["summary"]["byNF"][nf]
+        if nf_data["total"] > 0:
+            nf_data["accuracy"] = nf_data["correct"] / nf_data["total"]
+        else:
+            nf_data["accuracy"] = 0
+    for ws in results["summary"]["byWS"]:
+        ws_data = results["summary"]["byWS"][ws]
+        if ws_data["total"] > 0:
+            ws_data["accuracy"] = ws_data["correct"] / ws_data["total"]
+        else:
+            ws_data["accuracy"] = 0
 
     return results
 
