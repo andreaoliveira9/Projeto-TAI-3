@@ -187,12 +187,73 @@ def setup_test_environment(
     return test_files
 
 
-def run_tests(compressors=None):
+def initialize_results_file(output_file, parameters):
+    """
+    Initialize the JSON results file with the basic structure and test parameters.
+
+    Args:
+        output_file: Path to the output JSON file
+        parameters: Dictionary with test parameters
+
+    Returns:
+        Dictionary with the initialized results structure
+    """
+    results = {
+        "tests": [],
+        "summary": {
+            "total_tests": 0,
+            "correct_identifications": 0,
+            "by_compressor": {},
+            "by_variant": {},
+            "by_duration": {},
+            "compression_errors": {},
+            "byNF": {},
+            "byWS": {},
+        },
+        "parameters": parameters,
+    }
+
+    # Initialize compressor summaries
+    for compressor in parameters["compressors"]:
+        results["summary"]["by_compressor"][compressor] = {
+            "total": 0,
+            "correct": 0,
+            "errors": 0,
+        }
+        results["summary"]["compression_errors"][compressor] = 0
+
+    # Initialize NF and WS summaries
+    for nf in NF_VALUES:
+        results["summary"]["byNF"][str(nf)] = {"total": 0, "correct": 0, "errors": 0}
+    for ws in WS_VALUES:
+        results["summary"]["byWS"][str(ws)] = {"total": 0, "correct": 0, "errors": 0}
+
+    # Write the initial structure to file
+    with open(output_file, "w") as f:
+        json.dump(results, f)
+
+    return results
+
+
+def update_results_file(output_file, results):
+    """
+    Update the JSON results file with the current results.
+
+    Args:
+        output_file: Path to the output JSON file
+        results: Dictionary with current results
+    """
+    with open(output_file, "w") as f:
+        json.dump(results, f)
+
+
+def run_tests(compressors=None, output_file=None):
     """
     Run tests on all frequency files in the test directory.
 
     Args:
         compressors: List of compressors to use (default: gzip, bzip2, xz, zstd)
+        output_file: Path to the output JSON file for incremental writing
 
     Returns:
         Dictionary with detailed test results
@@ -209,35 +270,48 @@ def run_tests(compressors=None):
         print("No test files found in test directory")
         return {}
 
-    # Results container
-    results = {
-        "tests": [],
-        "summary": {
-            "total_tests": 0,
-            "correct_identifications": 0,
-            "by_compressor": {},
-            "by_variant": {},
-            "by_duration": {},
-            "compression_errors": {},
-            "byNF": {},
-            "byWS": {},
-        },
-    }
-
-    # Inicializar os summaries de NF e WS
-    for nf in NF_VALUES:
-        results["summary"]["byNF"][str(nf)] = {"total": 0, "correct": 0, "errors": 0}
-    for ws in WS_VALUES:
-        results["summary"]["byWS"][str(ws)] = {"total": 0, "correct": 0, "errors": 0}
-
-    # Initialize summary counters
-    for compressor in compressors:
-        results["summary"]["by_compressor"][compressor] = {
-            "total": 0,
-            "correct": 0,
-            "errors": 0,
+    # Load existing results if output_file exists, otherwise create new results structure
+    if output_file and os.path.exists(output_file):
+        with open(output_file, "r") as f:
+            results = json.load(f)
+    else:
+        # Results container
+        results = {
+            "tests": [],
+            "summary": {
+                "total_tests": 0,
+                "correct_identifications": 0,
+                "by_compressor": {},
+                "by_variant": {},
+                "by_duration": {},
+                "compression_errors": {},
+                "byNF": {},
+                "byWS": {},
+            },
         }
-        results["summary"]["compression_errors"][compressor] = 0
+
+        # Inicializar os summaries de NF e WS
+        for nf in NF_VALUES:
+            results["summary"]["byNF"][str(nf)] = {
+                "total": 0,
+                "correct": 0,
+                "errors": 0,
+            }
+        for ws in WS_VALUES:
+            results["summary"]["byWS"][str(ws)] = {
+                "total": 0,
+                "correct": 0,
+                "errors": 0,
+            }
+
+        # Initialize summary counters
+        for compressor in compressors:
+            results["summary"]["by_compressor"][compressor] = {
+                "total": 0,
+                "correct": 0,
+                "errors": 0,
+            }
+            results["summary"]["compression_errors"][compressor] = 0
 
     # Test each frequency file with each compressor
     for test_file in test_files:
@@ -392,6 +466,10 @@ def run_tests(compressors=None):
             # Add test result to collection
             results["tests"].append(test_result)
 
+            # Write results incrementally to file
+            if output_file:
+                update_results_file(output_file, results)
+
     # Calculate percentages for summary
     if results["summary"]["total_tests"] > 0:
         results["summary"]["accuracy"] = (
@@ -436,6 +514,10 @@ def run_tests(compressors=None):
             ws_data["accuracy"] = ws_data["correct"] / ws_data["total"]
         else:
             ws_data["accuracy"] = 0
+
+    # Write final results to file
+    if output_file:
+        update_results_file(output_file, results)
 
     return results
 
@@ -500,6 +582,29 @@ def main():
 
     args = parser.parse_args()
 
+    # Create output filename if not provided
+    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
+    output_file = args.output if args.output else f"test_results_{timestamp}.json"
+
+    # Create test parameters dictionary
+    test_parameters = {
+        "music_dir": args.music_dir,
+        "segments_per_file": args.segments,
+        "duration": args.duration,
+        "noise_levels": args.noise_levels,
+        "compressors": args.compressors,
+        "sox_used": args.sox,
+        "noise_types": args.noise_types,
+        "reverb": args.reverb,
+        "eq": args.eq,
+        "speed": args.speed,
+        "pitch": args.pitch,
+        "timestamp": timestamp,
+    }
+
+    # Initialize results file
+    initialize_results_file(output_file, test_parameters)
+
     if not args.skip_setup:
         test_files = setup_test_environment(
             args.music_dir,
@@ -523,17 +628,21 @@ def main():
         print(f"- {len(test_files['freq_files'])} frequency files generated")
         print(f"- {len(test_files['database_files'])} database files created")
 
-    # Run the tests and get detailed results
-    detailed_results = run_tests(args.compressors)
+    # Run the tests and get detailed results - pass the output file for incremental writing
+    detailed_results = run_tests(args.compressors, output_file)
 
     # Evaluate performance for each compressor (original functionality)
     print("\n--- Evaluating compressor performance ---")
     evaluation_results = evaluate_compressor_performance("test", args.compressors)
 
+    # Load the current results to update with evaluation results
+    with open(output_file, "r") as f:
+        current_results = json.load(f)
+
     # Add evaluation results to the detailed results
-    detailed_results["evaluation"] = {}
+    current_results["evaluation"] = {}
     for compressor in args.compressors:
-        detailed_results["evaluation"][compressor] = {
+        current_results["evaluation"][compressor] = {
             "correct": evaluation_results[compressor]["correct"],
             "total": evaluation_results[compressor]["total"],
             "accuracy": evaluation_results[compressor]["accuracy"],
@@ -547,37 +656,18 @@ def main():
         accuracy = evaluation_results[compressor]["accuracy"]
         print(f"{compressor}: {correct}/{total} correct ({accuracy:.2%} accuracy)")
 
-    # Save results to JSON file
-    timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    output_file = args.output if args.output else f"test_results_{timestamp}.json"
-
-    # Add test parameters to results
-    detailed_results["parameters"] = {
-        "music_dir": args.music_dir,
-        "segments_per_file": args.segments,
-        "duration": args.duration,
-        "noise_levels": args.noise_levels,
-        "compressors": args.compressors,
-        "sox_used": args.sox,
-        "noise_types": args.noise_types,
-        "reverb": args.reverb,
-        "eq": args.eq,
-        "speed": args.speed,
-        "pitch": args.pitch,
-        "timestamp": timestamp,
-    }
-
     # Print error summary if any errors occurred
-    if "compression_errors" in detailed_results["summary"]:
+    if "compression_errors" in current_results["summary"]:
         print("\nCompression Error Summary:")
-        for compressor, count in detailed_results["summary"][
+        for compressor, count in current_results["summary"][
             "compression_errors"
         ].items():
             if count > 0:
                 print(f"  {compressor}: {count} errors")
 
+    # Final update to the results file
     with open(output_file, "w") as f:
-        json.dump(detailed_results, f, indent=2)
+        json.dump(current_results, f, indent=2)
 
     print(f"\nDetailed results saved to {output_file}")
 
