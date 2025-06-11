@@ -50,11 +50,6 @@ venv/
 env/
 ENV/
 
-# Generated data directories
-segments/
-database/
-test/
-
 # Generated plots
 *.png
 *.jpg
