@@ -831,7 +831,9 @@ def main():
 
     # Create output filename if not provided
     timestamp = datetime.now().strftime("%Y%m%d_%H%M%S")
-    output_file = args.output if args.output else f"test_results_{timestamp}.json"
+    output_file = (
+        args.output if args.output else f"./results/test_results_{timestamp}.json"
+    )
 
     # Create test parameters dictionary
     test_parameters = {
