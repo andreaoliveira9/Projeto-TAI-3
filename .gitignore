@@ -75,3 +75,5 @@ GetMaxFreqs
 segments/
 musics/
 GetMaxFreqs_exec
+database/
+test/
