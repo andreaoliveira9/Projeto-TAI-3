@@ -141,6 +141,10 @@ where C(x) is the compressed size of x, and C(x,y) is the compressed size of x a
    - `compare`: Compare a segment against the database
    - `evaluate_compressors`: Evaluate and compare performance of different compressors
 
+## Musics
+
+URL: https://filesender.fccn.pt/?s=download&token=141af58e-6b32-4826-a84d-777097c0b377
+
 ## References
 
 Rudi Cilibrasi, Paul Vitányi, and Ronald de Wolf, *Algorithmic Clustering of Music Based on String Compression*, Computer Music Journal, 28:4, pp. 49–67, 2004.
