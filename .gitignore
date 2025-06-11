@@ -33,7 +33,6 @@
 
 .DS_Store
 .vscode
-*.wav
 
 # Byte-compiled / optimized / DLL files
 __pycache__/
@@ -77,3 +76,4 @@ musics/
 GetMaxFreqs_exec
 database/
 test/
+demo_segments/
