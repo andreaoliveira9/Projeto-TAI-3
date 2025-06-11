@@ -1,6 +1,5 @@
-# Music Identification using NCD (Normalized Compression Distance)
-
-This project implements a music identification system using Normalized Compression Distance (NCD) to identify songs from short segments. The system compares the performance of various compressors for this task.
+# Projeto-TAI-3
+Terceiro projeto Teoria Algorítmica da Informação
 
 ## Overview
 
