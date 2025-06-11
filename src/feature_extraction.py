@@ -8,7 +8,7 @@ import json
 from audio_processing import convert_to_mono_wav
 
 # Path to GetMaxFreqs executable - update this based on your system
-GETMAXFREQS_PATH = "./GetMaxFreqs_exec"
+GETMAXFREQS_PATH = "./GetMaxFreqs/bin/GetMaxFreqs_exec"
 
 
 def check_getmaxfreqs():
