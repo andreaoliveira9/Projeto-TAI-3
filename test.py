@@ -472,8 +472,8 @@ def run_tests(compressors=None, output_file=None, genres_map=None):
                     modification_type = "noise"
                     try:
                         # Extract noise level if present (e.g., noise_0.4)
-                        if "_noise_" in filename:
-                            noise_val = variant.split("_noise_")[1].split("_")[0]
+                        if "noise_" in filename:
+                            noise_val = variant.split("noise_")[1].split("_")[0]
                             modification_value = float(noise_val)
                     except (ValueError, IndexError):
                         modification_value = None
