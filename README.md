@@ -70,7 +70,7 @@ The `demo.ipynb` notebook provides a complete demonstration of the music identif
 
 ## Using the Web Interface
 
-The web interface allows you to record a music segment directly from your browser and automatically identify the most likely song.
+The web interface allows you to record a music segment directly from yout microphone and automatically identify the most likely song.
 
 ### How to use
 
