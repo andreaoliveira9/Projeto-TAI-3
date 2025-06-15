@@ -135,6 +135,10 @@ where C(x) is the compressed size of x, and C(x,y) is the compressed size of x a
 - `music_identification.py`: Functions for music identification
 - `main.py`: Main command line interface
 - `demo.ipynb`: Jupyter notebook for system demonstration
+- `web_interface.py`: Web server for the music identification interface
+- `live_music_identification.py`: Command-line tool for live music identification
+- `templates/`: Contains HTML templates for the web interface
+  - `index.html`: Main page of the web interface
 
 ## Test Music Files
 
