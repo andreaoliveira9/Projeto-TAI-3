@@ -12,11 +12,26 @@ from music_identification import identify_music
 import base64
 from pydub import AudioSegment
 import collections
+from statistics import mode, multimode
+import socket
 
 app = Flask(__name__)
 
 # Ensure the templates directory exists
 os.makedirs("templates", exist_ok=True)
+
+
+def get_local_ip():
+    """Get the local IP address of the machine"""
+    try:
+        # Create a socket to get the local IP
+        s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
+        s.connect(("8.8.8.8", 80))
+        local_ip = s.getsockname()[0]
+        s.close()
+        return local_ip
+    except Exception:
+        return "127.0.0.1"
 
 
 @app.route("/")
@@ -96,25 +111,32 @@ def record_audio():
             if not all_matches:
                 return jsonify({"success": True, "matches": []})
 
-            # Count occurrences of each song and average their distances
-            song_distances = collections.defaultdict(list)
-            for name, distance in all_matches:
-                song_distances[name].append(float(distance))
+            # Get all song names from matches
+            song_names = [name for name, _ in all_matches]
 
-            # Calculate average distance for each song
-            averaged_matches = [
-                (name, sum(distances) / len(distances))
-                for name, distances in song_distances.items()
-            ]
+            # Count occurrences of each song
+            song_counts = collections.Counter(song_names)
 
-            # Sort by average distance and take top 3
-            averaged_matches.sort(key=lambda x: x[1])
-            top_matches = averaged_matches[:3]
+            # Get the most common songs (up to 3)
+            most_common = song_counts.most_common(3)
+
+            # For each most common song, calculate its average distance
+            final_matches = []
+            for name, count in most_common:
+                # Get all distances for this song
+                distances = [
+                    float(distance)
+                    for song_name, distance in all_matches
+                    if song_name == name
+                ]
+                # Calculate average distance
+                avg_distance = sum(distances) / len(distances)
+                final_matches.append((name, avg_distance))
 
             # Format results
             results = [
                 {"name": name, "distance": f"{distance:.4f}"}
-                for name, distance in top_matches
+                for name, distance in final_matches
             ]
 
             no_matches = all(result["distance"] == 1 for result in results)
@@ -137,4 +159,9 @@ def record_audio():
 
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    local_ip = get_local_ip()
+    print(f"\nServidor rodando em:")
+    print(f"Local:   https://localhost:5001")
+    print(f"Rede:    https://{local_ip}:5001")
+    print("\nAcesse qualquer um dos endereços acima para usar a aplicação.")
+    app.run(host="0.0.0.0", port=5001, debug=True, ssl_context="adhoc")
