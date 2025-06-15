@@ -165,8 +165,19 @@
                     recordIcon.textContent = '●';
                     recordText.textContent = 'Start Recording';
                     const audioBlob = new Blob(audioChunks, { type: 'audio/webm' });
-                    const reader = new FileReader();
 
+                    // Verificar duração do áudio
+                    const audioUrl = URL.createObjectURL(audioBlob);
+                    const audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                    const arrayBuffer = await audioBlob.arrayBuffer();
+                    const audioBuffer = await audioContext.decodeAudioData(arrayBuffer);
+
+                    if (audioBuffer.duration < 9.9) { // tolerância para arredondamento
+                        showError('O áudio gravado tem menos de 10 segundos. Por favor, grave novamente.');
+                        return;
+                    }
+
+                    const reader = new FileReader();
                     reader.onloadend = async () => {
                         const base64Audio = reader.result.split(',')[1];
                         try {
@@ -265,7 +276,7 @@
         function showError(message) {
             errorDiv.classList.remove('hidden');
             errorDiv.querySelector('span').textContent = message;
-            recordingStatus.textContent = 'Error occurred';
+            recordingStatus.textContent = '';
         }
 
         recordButton.addEventListener('click', () => {
