@@ -18,15 +18,7 @@ NCD is an approximation of the non-computable Normalized Information Distance (N
 
 ### Python Dependencies
 
-The project requires Python 3.12+ and the following libraries (listed in `requirements.txt`):
-- librosa
-- numpy
-- scipy
-- matplotlib
-- scikit-learn
-- pydub
-- soundfile
-- and more (see `requirements.txt` for the complete list)
+The project requires Python 3.12+ and the libraries listed in `requirements.txt`.
 
 ### Compressors
 
@@ -128,6 +120,10 @@ where C(x) is the compressed size of x, and C(x,y) is the compressed size of x a
 - `/segments`: Contains extracted segments for testing
 - `/demo_music`: Contains music files for demonstration
 - `/demo_segments`: Contains extracted segments for demonstration
+- `/test`: Contains .freq files
+- `/results`: Contains evaluation results and performance metrics
+- `/musics`: Contains the original music files subdivided into genres
+- `/GetMaxFreqs`: Contains the external frequency extraction tool
 - `evaluate_compressors.py`: Script to evaluate different compressors
 - `audio_processing.py`: Functions for audio handling
 - `feature_extraction.py`: Functions for converting audio to frequency features
@@ -137,6 +133,7 @@ where C(x) is the compressed size of x, and C(x,y) is the compressed size of x a
 - `demo.ipynb`: Jupyter notebook for system demonstration
 - `web_interface.py`: Web server for the music identification interface
 - `live_music_identification.py`: Command-line tool for live music identification
+- `test.py`: Test suite for the music identification system
 - `templates/`: Contains HTML templates for the web interface
   - `index.html`: Main page of the web interface
 
