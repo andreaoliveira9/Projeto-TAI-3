@@ -53,7 +53,6 @@ ENV/
 *.png
 *.jpg
 *.jpeg
-*.pdf
 
 # Log files
 *.log
