@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Music Identification</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <style>
+        .record-button {
+            transition: all 0.3s cubic-bezier(.4,0,.2,1);
+            box-shadow: 0 0 0 0 rgba(239,68,68, 0.7);
+        }
+        .record-button.recording {
+            animation: pulse 1.2s infinite;
+            background: linear-gradient(90deg, #ef4444 60%, #f87171 100%);
+            box-shadow: 0 0 0 8px rgba(239,68,68, 0.2);
+        }
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(239,68,68, 0.7); }
+            70% { box-shadow: 0 0 0 16px rgba(239,68,68, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(239,68,68, 0); }
+        }
+        .wave {
+            display: flex;
+            align-items: flex-end;
+            height: 32px;
+            gap: 3px;
+            width: 80px;
+            margin: 0 auto 10px auto;
+        }
+        .bar {
+            width: 6px;
+            background: #3b82f6;
+            border-radius: 3px;
+            animation: waveAnim 1.2s infinite;
+        }
+        .bar:nth-child(2) { animation-delay: 0.1s; }
+        .bar:nth-child(3) { animation-delay: 0.2s; }
+        .bar:nth-child(4) { animation-delay: 0.3s; }
+        .bar:nth-child(5) { animation-delay: 0.4s; }
+        @keyframes waveAnim {
+            0%, 100% { height: 10px; }
+            50% { height: 32px; }
+        }
+        .timer {
+            font-size: 2rem;
+            font-family: 'Fira Mono', monospace;
+            color: #2563eb;
+            font-weight: bold;
+            letter-spacing: 0.05em;
+            background: #e0e7ff;
+            border-radius: 0.5rem;
+            padding: 0.2em 0.8em;
+            display: inline-block;
+            margin-top: 0.5em;
+        }
+        .music-title {
+            font-size: 2.8rem;
+            font-weight: bold;
+            text-align: center;
+            margin-top: 2.5rem;
+            letter-spacing: 0.03em;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            animation: fadeInMusic 1.2s 0.2s forwards;
+        }
+        .music-title-text {
+            background: linear-gradient(90deg, #16a34a 30%, #22d3ee 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+            text-shadow: 0 2px 16px #bbf7d0;
+            font-size: 2.5rem;
+            font-weight: 900;
+            margin-bottom: 0.5rem;
+        }
+        .music-title-icon {
+            font-size: 2.2rem;
+            color: #22d3ee;
+            margin-bottom: 0.5rem;
+            filter: drop-shadow(0 2px 8px #a7f3d0);
+        }
+        @keyframes fadeInMusic {
+            to { opacity: 1; }
+        }
+    </style>
+</head>
+<body class="bg-gradient-to-br from-blue-100 to-indigo-200 min-h-screen">
+    <div class="container mx-auto px-4 py-8">
+        <div class="max-w-2xl mx-auto">
+            <h1 class="text-4xl font-extrabold text-center mb-8 text-indigo-900 drop-shadow">Music Identification</h1>
+            <div class="bg-white rounded-2xl shadow-2xl p-8 mb-8">
+                <div class="text-center mb-6 gap-4">
+                    <button id="recordButton" class="record-button bg-red-500 hover:bg-red-600 text-white font-bold py-5 px-12 rounded-full text-xl focus:outline-none focus:shadow-outline shadow-lg">
+                        <span id="recordIcon">●</span> <span id="recordText">Start Recording</span>
+                    </button>
+                    <div id="timerDisplay" class="timer"></div>
+                    <div id="waveContainer" class="wave mx-auto" style="display:none">
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                        <div class="bar"></div>
+                    </div>
+                    <p id="recordingStatus" class="mt-4 text-gray-600"></p>
+                </div>
+                <div id="results" class="hidden">
+                    <div id="musicTitle" class="music-title"></div>
+                </div>
+                <div id="error" class="hidden bg-red-100 border border-red-400 text-red-700 px-4 py-3 rounded relative mt-4" role="alert">
+                    <span class="block sm:inline"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script>
+        let mediaRecorder;
+        let audioChunks = [];
+        let isRecording = false;
+        let recordTimeout = null;
+        let timerInterval = null;
+        const RECORD_SECONDS = 10;
+        let timeLeft = RECORD_SECONDS;
+
+        const recordButton = document.getElementById('recordButton');
+        const recordIcon = document.getElementById('recordIcon');
+        const recordText = document.getElementById('recordText');
+        const recordingStatus = document.getElementById('recordingStatus');
+        const resultsDiv = document.getElementById('results');
+        const musicTitle = document.getElementById('musicTitle');
+        const errorDiv = document.getElementById('error');
+        const timerDisplay = document.getElementById('timerDisplay');
+        const waveContainer = document.getElementById('waveContainer');
+
+        function updateTimerDisplay() {
+            timerDisplay.textContent = isRecording ? `${timeLeft}s` : '';
+        }
+
+        async function startRecording() {
+            try {
+                const stream = await navigator.mediaDevices.getUserMedia({
+                    audio: {
+                        sampleRate: 48000,
+                        channelCount: 1,
+                        echoCancellation: false,
+                        noiseSuppression: false,
+                        autoGainControl: false
+                    }
+                });
+                mediaRecorder = new MediaRecorder(stream);
+
+                mediaRecorder.ondataavailable = (event) => {
+                    audioChunks.push(event.data);
+                };
+
+                mediaRecorder.onstop = async () => {
+                    clearInterval(timerInterval);
+                    timerDisplay.textContent = '';
+                    waveContainer.style.display = 'none';
+                    recordButton.classList.remove('recording');
+                    recordIcon.textContent = '●';
+                    recordText.textContent = 'Start Recording';
+                    const audioBlob = new Blob(audioChunks, { type: 'audio/webm' });
+                    const reader = new FileReader();
+
+                    reader.onloadend = async () => {
+                        const base64Audio = reader.result.split(',')[1];
+                        try {
+                            const response = await fetch('/record', {
+                                method: 'POST',
+                                headers: {
+                                    'Content-Type': 'application/json',
+                                },
+                                body: JSON.stringify({
+                                    audio: base64Audio,
+                                    sampleRate: 48000
+                                })
+                            });
+
+                            const data = await response.json();
+
+                            if (data.error) {
+                                showError(data.error);
+                            } else {
+                                showMusicTitle(data.matches);
+                            }
+                        } catch (error) {
+                            showError('Error processing audio: ' + error.message);
+                        }
+                    };
+
+                    reader.readAsDataURL(audioBlob);
+                };
+
+                audioChunks = [];
+                mediaRecorder.start();
+                isRecording = true;
+                timeLeft = RECORD_SECONDS;
+                updateTimerDisplay();
+                recordButton.textContent = 'Stop Recording';
+                recordButton.classList.add('recording');
+                recordIcon.textContent = '■';
+                recordText.textContent = 'Recording...';
+                waveContainer.style.display = 'flex';
+                recordingStatus.textContent = 'Recording...';
+
+                // Timer countdown
+                timerInterval = setInterval(() => {
+                    timeLeft--;
+                    updateTimerDisplay();
+                    if (timeLeft <= 0) {
+                        stopRecording();
+                    }
+                }, 1000);
+
+                // Para automaticamente após 10 segundos
+                recordTimeout = setTimeout(() => {
+                    if (isRecording) {
+                        stopRecording();
+                    }
+                }, RECORD_SECONDS * 1000);
+
+            } catch (error) {
+                showError('Error accessing microphone: ' + error.message);
+            }
+        }
+
+        function stopRecording() {
+            if (mediaRecorder && isRecording) {
+                mediaRecorder.stop();
+                isRecording = false;
+                recordButton.textContent = 'Start Recording';
+                recordButton.classList.remove('recording');
+                recordIcon.textContent = '●';
+                recordText.textContent = 'Start Recording';
+                recordingStatus.textContent = 'Processing...';
+                if (recordTimeout) {
+                    clearTimeout(recordTimeout);
+                    recordTimeout = null;
+                }
+                if (timerInterval) {
+                    clearInterval(timerInterval);
+                    timerInterval = null;
+                }
+                timerDisplay.textContent = '';
+                waveContainer.style.display = 'none';
+            }
+        }
+
+        function showMusicTitle(matches) {
+            resultsDiv.classList.remove('hidden');
+            errorDiv.classList.add('hidden');
+            if (matches && matches.length > 0) {
+                musicTitle.innerHTML = `<span class="music-title-icon">🎵</span><span class="music-title-text">${matches[0].name}</span>`;
+            } else {
+                musicTitle.innerHTML = `<span class="music-title-icon">❌</span><span class="music-title-text">No match found</span>`;
+            }
+            recordingStatus.textContent = 'Recording finished';
+        }
+
+        function showError(message) {
+            errorDiv.classList.remove('hidden');
+            errorDiv.querySelector('span').textContent = message;
+            recordingStatus.textContent = 'Error occurred';
+        }
+
+        recordButton.addEventListener('click', () => {
+            if (isRecording) {
+                stopRecording();
+            } else {
+                startRecording();
+            }
+        });
+    </script>
+</body>
+</html> 
