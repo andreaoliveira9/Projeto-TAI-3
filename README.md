@@ -68,6 +68,44 @@ The `demo.ipynb` notebook provides a complete demonstration of the music identif
    - Convert segments to frequency representations
    - Identify music by comparing segments with the database
 
+## Using the Web Interface
+
+The web interface allows you to record a music segment directly from your browser and automatically identify the most likely song.
+
+### How to use
+
+1. **Run the web server:**
+   ```bash
+   python web_interface.py
+   ```
+
+2. **Open your browser** and go to:
+   ```
+   http://127.0.0.1:5000
+   ```
+
+3. **Record a music segment** (10 seconds) using the button in the interface.
+4. Wait for processing. The most likely song name will be displayed in a highlighted style.
+
+---
+
+## Using the Command-Line Live Identifier
+
+The script `live_music_identification.py` allows you to identify a song by recording 10 seconds from your microphone via the terminal.
+
+### How to use
+
+1. **Run the script:**
+   ```bash
+   python live_music_identification.py
+   ```
+
+2. **Follow the instructions in the terminal:**
+   - The script will record 10 seconds from your microphone.
+   - After recording, the audio will be processed and the most likely song name will be displayed in the terminal.
+
+---
+
 ## How It Works
 
 The system works by:
