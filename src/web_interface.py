@@ -14,6 +14,7 @@ from pydub import AudioSegment
 import collections
 from statistics import mode, multimode
 import socket
+import math
 
 app = Flask(__name__)
 
@@ -133,16 +134,18 @@ def record_audio():
                 avg_distance = sum(distances) / len(distances)
                 final_matches.append((name, avg_distance))
 
+            no_matches = all(
+                math.isclose(match[1], 1.0, rel_tol=1e-9) for match in final_matches
+            )
+
+            if no_matches:
+                return jsonify({"success": True, "matches": []})
+
             # Format results
             results = [
                 {"name": name, "distance": f"{distance:.4f}"}
                 for name, distance in final_matches
             ]
-
-            no_matches = all(result["distance"] == 1 for result in results)
-
-            if no_matches:
-                return jsonify({"success": True, "matches": []})
 
             return jsonify({"success": True, "matches": results})
 
