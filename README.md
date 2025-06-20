@@ -1,6 +1,8 @@
 # Projeto-TAI-3
 Terceiro projeto Teoria Algorítmica da Informação
 
+Nota: 19
+
 ## Overview
 
 NCD is an approximation of the non-computable Normalized Information Distance (NID) using standard compression algorithms. This implementation identifies music tracks from small segments (e.g., 10 seconds) by comparing their frequency representations.
